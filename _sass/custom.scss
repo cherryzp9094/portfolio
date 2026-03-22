@@ -1,0 +1,43 @@
+// 전체 본문 폰트 크기 업
+body {
+  font-size: 18px !important;
+}
+
+// 테이블 가독성 강화
+table {
+  font-size: 17px !important;
+  width: 100% !important;
+  
+  th, td {
+    padding: 12px 16px !important;
+  }
+  
+  th {
+    font-weight: 700 !important;
+  }
+}
+
+// 프로젝트 설명 텍스트
+.col-xs-12 p, .col-xs-12 li {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+
+// About Me 섹션
+.about .col-xs-12 p {
+  font-size: 18px !important;
+}
+
+// 섹션 제목
+h2 {
+  font-size: 28px !important;
+}
+
+h3 {
+  font-size: 22px !important;
+}
+
+// bold 강조 더 눈에 띄게
+strong {
+  color: #ffffff !important;
+}
