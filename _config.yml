@@ -1,0 +1,280 @@
+# Site
+repository: cherryzp9094/portfolio
+favicon: images/favicon.ico
+
+version: 2
+
+name: 이성광 (SeongKwang Lee)
+title: 7년차 Android Developer
+email: cherryzp9094@gmail.com
+
+darkmode: true
+
+github_username: cherryzp9094
+linkedin_username: "%EC%84%B1%EA%B4%91-%EC%9D%B4-391441236"
+
+about_profile_image: images/profile.jpg
+about_content: |
+  **7년차 Android 개발자** 이성광입니다.
+
+  6,000여 개 뷰티샵 · 월 60만 건 예약을 처리하는 B2B SaaS CRM **공비서**의 Android를 4년 이상 담당하며,
+  1인 체제에서 팀을 만들고 아키텍처를 바꾸고 AI로 개발 방식을 바꿔왔습니다.
+
+  기술적 판단이 필요한 순간마다 대안을 비교하고, 실패를 통해 구조를 개선하며,
+  팀이 활용할 수 있는 시스템을 구축해왔습니다.
+
+  '왜'라는 질문을 통해 모든 결정의 근거를 명확히 하고,
+  다음 사람이 이어받을 수 있는 구조를 만드는 것이 제 기준입니다.
+
+content:
+  - title: 핵심 수치 요약
+    layout: text
+    content: |
+      | 항목 | Before | After |
+      |--|--|--|
+      | Kotlin 전환율 | 70% (Java 중심) | **97%** (2025 기준) |
+      | 빌드 시간 | 최대 8분 | **3분 이내 (50%+ 단축)** |
+      | Crashlytics 정상 동작률 | — | **99.5%** |
+      | ViewModel 테스트 커버리지 | 0% | **평균 80%+** |
+      | Maestro UI TC | 0 | **80 TC (커버리지 100%)** |
+      | 데이터 암호화 마이그레이션 | 평문 노출 | **로그인 실패 0%** |
+      | 연락처 대량 업로드 | 13,000건 실패 | **500건 분할, 실패율 0%** |
+
+  - title: Work Experience
+    layout: list
+    content:
+      - layout: left
+        title: (주) 헤렌
+        sub_title: Android Developer
+        caption: 2021.11 ~ 현재
+        link: https://www.gongbiz.kr
+        description: |
+          **공비서** — 뷰티 업계 B2B SaaS CRM
+          6,000여 개 오프라인 뷰티샵 월간 유료 구독 · 월 60만 건 이상 예약 처리
+          담당 앱: Android (B2B CRM) · Android (B2C) · 비즈콜(캐치콜) 멀티 앱
+
+  - title: Projects
+    layout: list
+    content:
+      - layout: top-middle
+        title: "1. 앱 현대화 — 아키텍처 전환 & 빌드 최적화"
+        caption: "2021.11 ~ 2025 (지속적 개선) | 기여도: 30~100%"
+        description: |
+          **배경 & 문제**
+          - 입사 당시 Java 70% / Kotlin 30%, MVC 패턴, AsyncTask 기반의 레거시 코드베이스
+          - Android 1인 체제로 B2B·B2C 2개 앱 동시 유지보수
+          - 빌드 시간 최대 8분 소요, 구버전 AGP로 최신 기능 사용 불가
+          - CRM·비즈콜 2개 앱이 별도 레포로 관리되어 공통 코드 중복 발생
+
+          **해결 & 의사결정**
+          - **자체 MVI 프레임워크 선택:** Orbit 분석 후 reduceState + postSideEffect 방식으로 구현. 주니어 합류 시 외부 라이브러리 내부 동작 디버깅의 어려움을 고려
+          - **Compose 선제 전환:** DataBinding 종료에 대비, Activity-ViewModel 간 분산 상태를 ViewModel 중심으로 통합
+          - **모노레포 전환:** Presentation / Network / Common 3-Layer 멀티모듈 구조 설계 (Android 3인 협업, 기여도 30%)
+          - **빌드 최적화:** 병렬 빌드 + 빌드 캐시 + Kapt→KSP 전환 + 증분 빌드 + AGP 최신화
+
+          **성과**
+          - Java → Kotlin 전환율: 70% → **97%** (2025 기준)
+          - 빌드 시간: 최대 8분 → **3분 이내 (50%+ 단축)**
+          - CRM·비즈콜 모노레포 통합 — 공통 코드 재활용, B2C 포함 3개 앱 단일 구조로 운영
+          - Android 15/16 EdgeToEdge 정책 대응 — 기획·디자인 설득하여 UX 정책 변경 관철
+
+      - layout: top-middle
+        title: "2. 캘린더 / 예약 프로세스 개선"
+        caption: "2022.08 ~ 2023.07 | 기여도: 90%"
+        additional_links:
+          - title: "팀: Android 2, iOS 2, Frontend 2, Backend 3, PD 1"
+            icon: fas fa-users
+        description: |
+          **문제:** 플랫폼별 캘린더 UI/UX 상이로 원장님들의 혼란 발생
+
+          **해결:**
+          - 웹뷰·네이티브 간 공통 브릿지 함수 설계 및 구현 — 유지보수성 강화
+          - FCM 알림 종류에 따른 앱 진입 경로 설정 — 맞춤형 진입 경험 제공
+          - 예약 추가/수정/삭제/막기, 운영설정, 직원 휴무일 기능 개발
+
+          **성과:**
+          - 고객 검색 Paging3 구현, 화면 순환 구조 설계
+          - JUnit5 테스트 코드 최초 도입 — 서비스 안정성 기반 마련
+
+          **회고:** 초기 고객 니즈 파악 미흡으로 캘린더 기능 변경 클레임 발생 → 기획 단계 고객 인터뷰 프로세스 제안
+
+      - layout: top-middle
+        title: "3. 매출 개선"
+        caption: "2023.11 ~ 2024.06 | 기여도: 100%"
+        description: |
+          **문제:** 레거시 할인 정책 미반영으로 핫픽스 사건 발생 → 기존 기능 개선의 중요성 인식
+
+          **해결:**
+          - 매출 프로세스 플로우 차트 도식화 — 전체 파악 시간 단축, 신속한 원인 분석 가능
+          - LiveData → StateFlow/SharedFlow 전환 — 이벤트 기반 흐름 및 다중 구독 구조 개선
+
+          **성과:**
+          - Java → Kotlin 전환율 30% → **95%** (2024.08 기준, 현재 97%)
+          - Crashlytics 앱 정상 동작 비율 **99.5%** 달성
+          - 디자인 토큰 PoC 완료 (기획/디자인 인력 부족으로 잠정 연기)
+
+      - layout: top-middle
+        title: "4. 고객 차트 개선"
+        caption: "2024.07 ~ 2024.11 | 기여도: 100%"
+        description: |
+          **문제:** 고객 목록 필터·그룹 기능 부재로 관리 불편
+
+          **해결:**
+          - B2B 앱 Compose 최초 도입 — 선언형 UI로 상태 관리 최적화
+          - 실시간 검색 debounce 기법 적용 — 불필요한 API 요청 제거
+          - 드래그앤드랍 + 햅틱 피드백 적용 (이후 OS 업데이트 크래시 → 자체 구현으로 전환)
+
+          **성과:**
+          - Compose/MVI 팀 스터디 주최·진행 (DroidKnightsApp 기반)
+          - Orbit 레퍼런스로 팀 자체 MVI 프레임워크 구현 — 상태·부수효과 분리
+          - Turbine 기반 Flow Unit Test 작성
+
+          **회고:** 필터 조회 성능 이슈 → 쿼리 최적화로 해결
+
+      - layout: top-middle
+        title: "5. 위젯 리뉴얼"
+        caption: "2024.11 ~ 2024.12 | 기여도: 100%"
+        description: |
+          **문제:** RemoteViews 기반 위젯 상태 관리 한계, 절전모드 동기화 오류 VOC
+
+          **해결:**
+          - RemoteViews → Jetpack Glance 전환, Compose 기반 위젯 상태 관리
+          - WorkManager 주기적 업데이트, DataStore(Protobuf) 안정적 데이터 관리
+          - 절전모드(DozeMode): 민감 권한 없이 UI로 해제 유도
+
+          **성과:**
+          - LeakCanary 도입 — Crashlytics·ANR 미탐지 메모리 누수 사전 발견
+          - Chucker 적용 — API 디버깅 시간 단축
+          - 빌드 최적화 병행: 8분 → 3분 (50%+ 단축)
+
+      - layout: top-middle
+        title: "6. 2025 서비스 개선 — VOC 해결 & 안정성 강화"
+        caption: "2024.12 ~ 2025 Q4"
+        description: |
+          **회원가격 적용 (2024.12~Q1)**
+          - 원장님이 고객별 시술 가격을 수기로 관리 → 예약·매출 기반 회원가 자동 적용, 상태 기반 분기 구조화
+
+          **사용성 개선 & VOC 해결 (Q1~Q4)**
+          - 고객 연락처 13,000건 업로드 실패 → 500건 분할 동기화, 실패율 0%
+          - 통계 차트 Compose 직접 구현 — 라이브러리 한계 극복, 확장성 확보
+          - 월캘린더 고도화 — 네이티브 상단바 충돌 해결
+          - 반복예약 막기 — 패턴화, 무한 반복 처리, VOC 완전 해결
+
+          **인센티브 개선 (Q3)**
+          - 조회화면 선배포 → 설정화면 단계 배포 전략
+          - 웹 전용 인센티브 설정 Android 이식, 재사용·확장 가능한 UI 설계
+
+          **네이버 플랫폼 연동 고도화 (Q4)**
+          - 예약 확정 방식 선택 기능 추가
+          - Mock 데이터 선개발, 공통 네트워크 타임아웃 설정 추가
+
+      - layout: top-middle
+        title: "7. 앱 안정성 & 보안 체계 구축"
+        description: |
+          **데이터 보안 강화 — SharedPreferences → DataStore 암호화 마이그레이션**
+          - 디컴파일 시 평문 노출 취약점 → DataStore + AES-256-GCM 암호화
+          - 강제 업데이트 없이 마이그레이션 — **로그인 실패 0%**
+
+          **테스트 체계 구축**
+          - Jacoco 커버리지 시스템 — Claude 기반 TC 자동 생성, ViewModel 평균 **80%+**
+          - Maestro UI 자동화 — 80 TC 운영, QA팀 통합 TC로 확대 중
+          - Turbine Flow Unit Test, 마일스톤 테스트 도입으로 QA 기간 단축
+
+          **회고:** relaxed mock 분기 미탐지 → MockWebServer + JSON fixture 패턴 전환
+
+      - layout: top-middle
+        title: "8. AI 기반 개발 혁신 & 서비스 기능"
+        description: |
+          **서비스 AI — 고객 메모 음성 녹음 & AI 요약 PoC**
+          - 원장님 시술 중 기록 불편 → SpeechRecognizer + Claude 프롬프트 자동 요약
+          - PoC 서비스 반영, 프롬프트 최적화 진행 중
+          - 한글 STT 인식률 한계 → Whisper 등 대안 비교 검토 중
+
+          **개발 생산성 AI 자동화**
+          - Claude + MCP 기반 테스트 코드 자동 생성 파이프라인
+          - Mac Mini + OpenClaw 팀 공용 AI 에이전트 인프라 — 채널별 토큰/워크스페이스 분리
+          - Maestro TC 자동 추출 (80 TC), Slack 웹훅 보고서 자동 전달
+
+      - layout: top-middle
+        title: "9. 셀 매니징"
+        caption: "2025 Q4 ~ 현재"
+        description: |
+          **역할:** Android 1 · iOS 2 · QA 1 크로스 플랫폼 셀 매니징
+
+          - 업무 분배, 플랫폼 간 의존성 관리, 배포 일정 조율
+          - 기술 의사결정 주도 — MVI 프레임워크, Maestro 전환, AI 도구 선정
+          - Claude·Perplexity 등 AI 도구 활용법 팀 내 전파
+          - iOS 개발자가 Perplexity 기반 정책봇 직접 제작
+          - 팀 전체 자율적 AI 활용 문화 형성
+
+  - title: 기타 경력
+    layout: list
+    content:
+      - layout: left
+        title: (주) 대교
+        sub_title: Android Developer (프리랜서)
+        caption: 2020.12 ~ 2021.06
+        description: |
+          **대교 써밋 국어** — 초등학생 국어 교육 태블릿 앱 | 기여도 100%
+
+          - Samsung S-Pen SDK 기반 필기 학습 기능 — 필압 감지, 손바닥 리젝션
+          - 셀바스 AI STT 통합 — 음독 평가, 한글 인식률 70% 향상
+          - Galaxy Tab S6 Lite ~ S7+ 디바이스 호환성 대응
+
+      - layout: left
+        title: 메디팔 (MedipalInc.)
+        sub_title: Android Developer (프리랜서)
+        caption: 2020.06 ~ 2020.07
+        description: |
+          **환자-간호사 1:1 건강관리 매칭 서비스** | 기여도 100%
+
+          - 기획~배포 전 과정 2개월 내 1인 완수
+          - WebSocket 자체 채팅방, ExoPlayer 미디어, 채널톡 API, FCM
+
+      - layout: left
+        title: (주) 씨커스블록체인
+        sub_title: Android Developer
+        caption: 2018.08 ~ 2019.09
+        description: |
+          **비트탑** — 블록체인 기반 암호화폐 거래소 앱
+
+          - 이더리움·ERC-20 토큰 지갑, 실시간 시세·거래 기능
+          - 키스토어 개인키 관리, PIN·지문 인증
+
+  - title: Side Project
+    layout: list
+    content:
+      - layout: top-middle
+        title: DDD 12기 — Keeply
+        caption: "2025.05 ~ 2025.08"
+        description: |
+          **스크린샷 자동 분류·관리 앱** | Android 개발 MVP 수상 🏆
+
+          - 초기 아키텍처 전담 설계 — Clean Architecture + Compose + 자체 MVI
+          - 개발 리딩: 업무 분담, 일정 조율, 코드 리뷰 주도
+
+  - title: Education
+    layout: list
+    content:
+      - layout: left
+        title: 미래능력개발교육원
+        caption: 2017.11 ~ 2018.08
+        sub_title: 안드로이드 웹 앱 컨텐츠 개발자 양성과정
+      - layout: left
+        title: 국립군산대학교 (중퇴)
+        caption: 2008.03 ~ 2015.05
+        sub_title: 기계자동차공학부 (메카트로닉스)
+      - layout: left
+        title: 전주 신흥고등학교
+        caption: 2005.03 ~ 2008.02
+
+footer_show_references: false
+
+remote_theme: sproogen/modern-resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
