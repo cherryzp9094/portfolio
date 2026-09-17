@@ -1,22 +1,16 @@
-# 이성광 (SeongKwang Lee)
+# 이성광 · Android Developer
 
-### 👋 7년차 Android Developer
+7년차 Android 개발자 이성광의 포트폴리오 사이트입니다.
 
-🏢 **(주) 헤렌** — 공비서 Android 담당 (2021.11 ~ 현재)
+**사이트** → https://cherryzp9094.github.io/portfolio/
 
-6,000여 개 뷰티샵 · 월 60만 건 예약을 처리하는 B2B SaaS CRM
+## 구성
 
----
+- `index.html` — 단일 정적 페이지 (Jekyll 미사용, `.nojekyll`)
+- 소개 · 경력 · 프로젝트 · 기술 · 활동·학력
 
-### 🛠 Tech Stack
+## Contact
 
-`Kotlin` `Jetpack Compose` `MVI` `Clean Architecture` `Coroutines` `Flow` `Hilt` `JUnit5` `Maestro` `Jacoco` `Claude (MCP)` `OpenClaw`
-
----
-
-### 📄 Links
-
-- 📋 **[포트폴리오 →](./PORTFOLIO.md)**
-- 📧 cherryzp9094@gmail.com
+- ✉️ cherryzp9094@gmail.com
 - 🐙 [GitHub](https://github.com/cherryzp9094)
 - 💼 [LinkedIn](https://www.linkedin.com/in/%EC%84%B1%EA%B4%91-%EC%9D%B4-391441236/)
