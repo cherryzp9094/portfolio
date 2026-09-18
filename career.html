@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>경력기술서 · 이성광</title>
+<meta name="description" content="7년차 Android 개발자 이성광의 경력기술서. 프로젝트별 상황 · 해결 · 결과 · 회고.">
+<meta property="og:title" content="경력기술서 · 이성광">
+<meta property="og:description" content="7년차 Android 개발자 이성광의 경력기술서. 프로젝트별 상황 · 해결 · 결과 · 회고.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23111%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22>이</text></svg>">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>:root{color-scheme:light;--ink:#111;--ink2:#3d3d3d;--ink3:#767676;--rule:#e2e2e2;--rule2:#111;--link:#0b57d0;--bg:#fff;--wash:#f6f6f6}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+strong{font-weight:650}.sep{color:var(--ink3)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:var(--wash);padding:.1em .4em;border-radius:5px}
+
+.page{max-width:1120px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:72px}
+
+/* 왼쪽 고정 영역 */
+.side{min-width:0;position:sticky;top:0;align-self:start;height:100vh;padding:56px 0 40px;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:none}.side::-webkit-scrollbar{display:none}
+.side>*{flex-shrink:0}
+.name{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1.2}.name:hover{text-decoration:none}
+.role{margin:8px 0 0;color:var(--ink3);font-size:.9rem;line-height:1.55}
+.tabs{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;border:1px solid #cfcfcf;border-radius:10px;overflow:hidden}
+.tabs a{text-align:center;padding:9px 0;font-size:.88rem;font-weight:600;color:var(--ink2)}.tabs a:hover{text-decoration:none;background:var(--wash)}.tabs a.on{background:var(--ink);color:#fff}
+#toc{margin-top:22px;display:flex;flex-direction:column;border-top:1px solid var(--rule2)}
+#toc a{color:var(--ink2);padding:10px 0;border-bottom:1px solid var(--rule);font-size:.95rem;display:flex;justify-content:space-between;align-items:baseline}
+#toc a:hover{text-decoration:none;color:var(--ink)}#toc a.on{color:var(--ink);font-weight:700}#toc a.on::before{content:"";position:absolute;margin-left:-14px;margin-top:.62em;width:5px;height:5px;background:var(--ink)}
+#toc i{font-style:normal;color:var(--ink3);font-size:.76rem;font-variant-numeric:tabular-nums;margin-right:9px}
+#toc a span{display:flex;align-items:baseline}
+.contact{list-style:none;padding:0;margin:auto 0 0;padding-top:28px;font-size:.86rem;line-height:1.9}.contact a{color:var(--ink2)}
+
+/* 본문 */
+main{padding:56px 0 0;max-width:780px;min-width:0}
+section{padding-bottom:88px}
+h1{margin:0 0 14px;font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.22;letter-spacing:-.035em;font-weight:800}
+.subline{margin:0 0 30px;font-size:1.05rem;color:var(--ink3);font-weight:500}
+.about p{margin:0 0 .95em;color:var(--ink2);font-size:1.03rem}.about p:first-child{color:var(--ink);font-size:1.12rem}
+h2{margin:0 0 6px;padding-top:20px;border-top:2px solid var(--rule2);font-size:1.45rem;letter-spacing:-.025em;font-weight:800}
+.lead{margin:0 0 8px;color:var(--ink3);font-size:.92rem;line-height:1.65}.lead a{color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
+h3{margin:0;font-size:1.22rem;line-height:1.45;letter-spacing:-.02em;font-weight:750}
+h4{margin:30px 0 4px;font-size:.98rem;font-weight:750}h4 small{font-weight:400;color:var(--ink3);margin-left:4px;font-size:.86rem}
+.meta{margin:6px 0 0;color:var(--ink3);font-size:.86rem;line-height:1.6}
+.text{margin:14px 0 0;color:var(--ink2);font-size:.98rem}
+
+/* 프로젝트 — 전부 같은 폭 한 줄 */
+.proj{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0;padding:34px 0;border-bottom:1px solid var(--rule)}
+.proj:first-of-type{padding-top:28px}
+.no{font-variant-numeric:tabular-nums;font-size:.86rem;font-weight:700;color:var(--ink3);padding-top:5px;letter-spacing:.02em}
+.result{margin-top:16px;padding:2px 0 2px 16px;border-left:3px solid var(--rule2);display:grid;grid-template-columns:auto 1fr;gap:14px}
+.result>span{font-size:.8rem;font-weight:750;padding-top:3px;color:var(--ink)}
+.result ul{margin:0;padding:0;list-style:none}.result li{font-size:.96rem;font-weight:600;line-height:1.6;color:var(--ink)}
+.tags{margin:14px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.76rem;color:var(--ink3);line-height:1.7}
+.cbody{margin-top:18px;font-size:.98rem;color:var(--ink2);line-height:1.85}
+.cbody p{margin:0 0 .9em}.cbody p:last-child{margin-bottom:0}.cbody strong{color:var(--ink)}.cbody ul{margin:0 0 .9em;padding-left:1.15em}
+.cbody .blk{margin-top:1.5em}.cbody .blk:first-child{margin-top:0}.cbody .blk.only{margin-bottom:.45em}
+.lbl{display:inline-block;margin-right:10px;padding:1px 9px;border-radius:6px;font-size:.76rem;font-weight:700;line-height:1.7;vertical-align:1px;background:#e9e9ec;color:#333}
+.lbl-결과{background:#111;color:#fff}.lbl-회고{background:#fff;border:1px solid #cfcfcf;color:#555}
+.cbody pre{background:#fff;border:1px solid #e6e6e9;border-radius:10px;padding:14px 16px;overflow-x:auto;font-size:.78rem;line-height:1.55;margin:0 0 .9em}
+.cbody table{width:100%;border-collapse:collapse;font-size:.87rem;margin:0 0 1em;display:block;overflow-x:auto}.cbody th,.cbody td{border-bottom:1px solid #e6e6e9;padding:9px 12px 9px 0;text-align:left;vertical-align:top}.cbody th{color:var(--ink3);font-weight:600;white-space:nowrap}
+.cbody blockquote{margin:0 0 .9em;color:var(--ink3);font-size:.88rem}.cbody blockquote p{margin:0}
+
+h5{margin:44px 0 0;font-size:.82rem;font-weight:700;color:var(--ink3);letter-spacing:.02em}
+h2+h5{margin-top:18px}
+.teamline{margin:0 0 1.4em!important;padding-bottom:.9em;border-bottom:1px solid #e6e6e9;font-size:.85rem;color:var(--ink3)}
+.grp{padding-top:22px}.grp+.grp{margin-top:6px}.grp-name{margin:0;font-size:.95rem;font-weight:750;color:var(--ink)}.grp .mini{padding:14px 0 18px}.grp .mini h3{font-size:1rem}
+.minis{margin-top:6px}.mini{padding:22px 0;border-bottom:1px solid var(--rule)}.mini h3{font-size:1.04rem}.mini .text{margin-top:8px;font-size:.95rem}.mini .meta:empty{display:none}
+
+/* 경력기술서 페이지 */
+#toc a.toc-co{font-weight:750;color:var(--ink);margin-top:10px;border-top:1px solid var(--rule2)}#toc a.toc-co:first-child{margin-top:0}
+#toc a.toc-sub{padding-left:0}
+.csub{padding-top:40px}.csub .ch3{margin:0 0 8px;font-size:1.25rem;font-weight:800}
+h5 small{font-weight:500;color:var(--ink3)}
+
+.about-note{margin:0;color:var(--ink3);font-size:.95rem}
+.csec{padding:40px 0 44px;border-bottom:1px solid var(--rule);scroll-margin-top:24px}
+.cno{margin:0 0 6px;font-size:.86rem;font-weight:700;color:var(--ink3);font-variant-numeric:tabular-nums}
+.csec h3{font-size:1.4rem}
+.csec .teamline{margin:14px 0 0!important;padding:0;border:0}
+.cbody .blk{margin-top:1.7em}.cbody>.blk:first-child{margin-top:0}
+.csec .tags{margin-top:20px}
+.back{display:inline-block;margin-top:18px;font-size:.85rem;color:var(--ink3)}.back:hover{color:var(--link)}
+.ch3{margin:40px 0 0;font-size:1.2rem}.ch4{margin:36px 0 0;font-size:1.08rem;font-weight:750}.tailbody>.ch3:first-child,.tailbody>.ch4:first-child{margin-top:8px}
+.tailbody .teamline{margin:10px 0 0!important;padding:0;border:0}.tailbody .meta+p,.tailbody .teamline+p{margin-top:14px}
+.tailbody ul{padding-left:1.15em}.tailbody li{margin-bottom:.6em}
+
+/* 경력 */
+.job{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding:30px 0;border-bottom:1px solid var(--rule)}
+.when{color:var(--ink3);font-size:.88rem;font-variant-numeric:tabular-nums;padding-top:5px}
+.list{list-style:none;margin:10px 0 0;padding:0}.list li{padding:11px 0;border-top:1px solid var(--rule);font-size:.94rem;color:var(--ink2);line-height:1.7}
+.list li strong{color:var(--ink);display:block;margin-bottom:1px}
+.list.plain{margin-top:18px}.list.plain li:first-child{border-top:0;padding-top:0}.list.plain li strong{display:inline}.list.dim li{color:var(--ink3)}
+
+/* 기술 */
+.skills{width:100%;border-collapse:collapse;margin-top:18px}.skills th,.skills td{text-align:left;vertical-align:top;padding:14px 0;border-bottom:1px solid var(--rule);font-size:.94rem}
+.skills th{width:150px;font-weight:700;padding-right:16px;white-space:nowrap}.skills td{color:var(--ink2)}
+
+footer{padding:24px 0 56px;border-top:1px solid var(--rule);color:var(--ink3);font-size:.8rem}
+
+@media (max-width:900px){
+ .page{grid-template-columns:minmax(0,1fr);gap:0;padding:0 20px}
+ .side{position:static;height:auto;padding:32px 0 0;display:block}
+ #toc{flex-direction:row;flex-wrap:wrap;gap:0 18px;margin-top:20px;border-top:1px solid var(--rule2);border-bottom:1px solid var(--rule)}
+ #toc a{border-bottom:0;padding:10px 0;font-size:.9rem;gap:4px}#toc a.on::before{display:none}
+ .contact{margin:14px 0 0;display:flex;flex-wrap:wrap;gap:0 16px}
+ main{padding-top:36px}section{padding-bottom:60px}
+ .proj{grid-template-columns:1fr}.no{padding:0 0 6px}
+ .job{grid-template-columns:1fr;gap:4px}.skills th{width:auto;display:block;border-bottom:0;padding-bottom:0}.skills td{display:block;padding-top:4px}
+}
+@media print{.side{position:static;height:auto}#toc,.tabs,.back{display:none}.page{display:block}}
+</style>
+</head>
+<body>
+<div class="page">
+<aside class="side">
+  <a class="name" href="index.html">이성광</a>
+  <p class="role">Android Developer<br>SeongKwang Lee</p>
+  <div class="tabs"><a href="index.html" class="">이력서</a><a href="career.html" class="on">경력기술서</a></div>
+  <nav id="toc"><a href="#co1" class="toc-co">(주) 헤렌</a><a href="#c1-1"><span><i>01</i>데이터 암호화 마이그레이션</span></a><a href="#c1-2"><span><i>02</i>Compose 위젯 리뉴얼</span></a><a href="#c1-3"><span><i>03</i>레거시 아키텍처 전환</span></a><a href="#c1-4"><span><i>04</i>테스트 자동화</span></a><a href="#c1-5"><span><i>05</i>네이버 연동 고도화</span></a><a href="#c1-6"><span><i>06</i>AI 기반 Android 개발 고도화</span></a><a href="#c1-7"><span><i>07</i>통계 개선</span></a><a href="#c1-8"><span><i>08</i>결제수단 다양화</span></a><a href="#c1-9"><span><i>09</i>고객 목록 개선</span></a><a href="#c1-10"><span><i>10</i>캘린더·예약 개편</span></a><a href="#c1-11"><span><i>11</i>통합 회원가입</span></a><a href="#clead" class="toc-sub">네이티브 팀장</a><a href="#cetc" class="toc-sub">그 밖의 작업</a><a href="#co2" class="toc-co">(주) 대교</a><a href="#c2-1"><span><i>01</i>S-Pen 필기 입력과 음성 인식을 학습 화면에 통합</span></a><a href="#c2-2"><span><i>02</i>학습 결과 시각화와 앱 안정성 관리</span></a><a href="#co3" class="toc-co">메디팔</a><a href="#c3-1"><span><i>01</i>WebSocket 기반 실시간 채팅을 직접 구현하고 2개월 안에 배포</span></a><a href="#co4" class="toc-co">(주) 씨커스블록체인</a><a href="#c4-1"><span><i>01</i>Web3j로 이더리움 네트워크를 앱에서 직접 연동</span></a><a href="#c4-2"><span><i>02</i>인증 연동과 품질 관리, 백엔드 REST API 개발</span></a></nav>
+  <ul class="contact">
+    <li><a href="mailto:cherryzp9094@gmail.com">cherryzp9094@gmail.com</a></li>
+    <li><a href="https://github.com/cherryzp9094" target="_blank" rel="noopener">GitHub ↗</a></li>
+    <li><a href="https://www.linkedin.com/in/%EC%84%B1%EA%B4%91-%EC%9D%B4-391441236/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+  </ul>
+</aside>
+<main id="top">
+<section id="ctop"><h1>경력기술서</h1><p class="about-note">프로젝트마다 상황, 해결, 결과, 회고 순서로 적었습니다. 요약은 <a href="index.html">이력서</a>에 있습니다.</p></section><section id="co1"><h2>(주) 헤렌</h2><p class="subline">Android Developer → 네이티브 팀장<span class="sep"> · </span>2021.11 ~ 2026.05</p><p class="text"><strong><a href="https://play.google.com/store/apps/details?id=com.gongnailshop.herren_dell1.gongnailshop" target="_blank" rel="noopener">공비서 원장님</a></strong> — 뷰티 B2B SaaS CRM · Google Play <strong>10만+ 다운로드</strong> · 평점 4.2 (리뷰 662)</p><article class="csec" id="c1-1"><p class="cno">01</p><h3>Keystore·AES-GCM 기반 로컬 개인정보 암호화, 강제 업데이트 없이 이관</h3><p class="meta">데이터 암호화 마이그레이션<span class="sep"> · </span>2025.08<span class="sep"> · </span>기여도 100% · 자발적 착수</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span><strong>로컬에 저장된 고객 개인정보와 설정
+데이터가 평문으로 남아 있는 것</strong>을 직접 확인했습니다. 배정된
+업무가 아니라 문제를 발견한 뒤 스스로 착수했습니다. SharedPreferences를
+DataStore로 옮기려 했지만 <strong>DataStore도 기본 암호화를 제공하지
+않아</strong> 저장 계층 자체에 암호화를 넣어야 했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span><strong>DataStore의 Serializer 단계에 암호화
+계층을 끼워</strong> 저장 시 암호화·로드 시 복호화가 자동으로 일어나게
+했습니다. 쓰는 쪽 코드는 평소와 똑같습니다. 키는 <strong>Android
+Keystore에서 AES-256-GCM으로 생성·관리</strong>했고,
+<strong>AEAD</strong>를 적용해 기밀성과 무결성·변조 검증을 함께
+확보했습니다. 이미 배포된 앱의 데이터라 <strong>3단계 무중단
+마이그레이션</strong>으로 옮겼습니다(신규는 암호화 DataStore → 기존
+SharedPreferences는 실행 시 읽어 이관 → 완료 후 삭제).</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>강제 업데이트 없이 전환 · <strong>로그인 실패
+0건</strong></p>
+</div><p class="tags">Android Keystore<span class="sep"> · </span>AES-256-GCM<span class="sep"> · </span>DataStore<span class="sep"> · </span>Serializer</p></article><article class="csec" id="c1-2"><p class="cno">02</p><h3>RemoteViews에서 Glance로 위젯 재구축, 앱과 위젯 간 데이터 불일치 해소</h3><p class="meta">Compose 위젯 리뉴얼<span class="sep"> · </span>2024.11 ~ 12<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>RemoteViews 기반 레거시 위젯이 유지보수가
+어려웠고, 앱과 위젯 사이 데이터가 어긋나 값이 오래된 채로 남는다는 VOC,
+고해상도 기기에서 텍스트가 안 읽힌다는 VOC가 들어왔습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>RemoteViews를 <strong>Jetpack
+Glance</strong>로 옮겼습니다. Compose 문법이지만 실제로는 RemoteViews
+제약 안에서 돌아 LazyColumn 같은 기본 컴포넌트가 없고 공식 문서도
+부족해, <strong>Glance 라이브러리 소스를 직접 분석</strong>하며
+진행했습니다. 동기화는 WorkManager 주기 작업 + DataStore(Protobuf)로 —
+JSON보다 파싱 오버헤드가 적어 위젯처럼 제한된 환경에 맞다고 봤습니다.
+절전 모드는 VOC로 들어온 것이 아니라 작업 중 직접 조사해 위젯 동기화가
+어렵다는 것을 파악한 부분입니다. <strong>진입 브로드캐스트가
+OS·제조사(삼성/LG/샤오미)마다 달라</strong>
+<code>isPowerSaveMode()</code>와
+<code>ACTION_POWER_SAVE_MODE_CHANGED</code>를 조합해 감지하고,
+<strong>민감 권한을 요청하는 대신 해제를 유도하는 UI</strong>로
+넘겼습니다. 텍스트는 앱 실행 시 해상도·글자 크기를 저장해 렌더링 때
+조정했습니다. 이 프로젝트에서 <strong>LeakCanary를 도입</strong>해
+Crashlytics·ANR이 못 잡던 메모리 누수를 잡기 시작했고, 이후 실제 누수
+수정으로 이어졌습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>데이터 불일치·텍스트 VOC 해소 · 절전 모드
+해제 안내 UI 제공 · 운영 기간 위젯 관련 크래시 0건(Crashlytics) ·
+LeakCanary는 이후 팀 빌드 옵션으로 정착</p>
+<p class="blk"><span class="lbl lbl-회고">회고</span>텍스트 크기 조정은 앱을 한 번 실행해야
+반영됩니다. 위젯 단독으로 갱신할 방법을 못 찾았고, 그 한계는 그대로
+남았습니다.</p>
+</div><p class="tags">Glance<span class="sep"> · </span>WorkManager<span class="sep"> · </span>DataStore(Protobuf)<span class="sep"> · </span>LeakCanary</p></article><article class="csec" id="c1-3"><p class="cno">03</p><h3>Java·MVC 레거시를 Kotlin, 모노레포, MVI, Compose 순으로 무중단 전환</h3><p class="meta">레거시 아키텍처 전환<span class="sep"> · </span>2021.11 ~ 2025<span class="sep"> · </span>기여도 30~100%</p><p class="teamline">팀 구성 — Android 3</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>Java 71%의 MVC + AsyncTask 레거시. 앱마다
+레포가 나뉘어 있어 공통 코드가 중복됐습니다. 서비스는 계속 굴러가야
+했으므로 한 번에 갈아엎는 선택지는 없었습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>서비스를 멈추지 않으려고 축을 4개로 나눠 순차
+전환했습니다(Kotlin → 모노레포 → MVI → Compose).</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>단계</th>
+<th>전환</th>
+<th>판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Java → Kotlin</strong></td>
+<td>신규 프로젝트는 Kotlin으로 시작, 레거시는 <strong>영향도가 낮은
+파일부터 높은 순으로</strong> 전환</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>멀티레포 → 모노레포</strong></td>
+<td>Presentation / Network / Common 3-Layer 멀티모듈 (Android 3인
+협업)</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>MVVM → MVI</strong></td>
+<td>MVI를 깊이 이해하고 싶어 하던 팀원과, Now in Android처럼 외부 의존성
+없이 자체 코드로 만들어 보자는 챌린지로 시작 — Orbit 코드를 분석하며
+함께 학습하고 <code>reduceState</code> + <code>postSideEffect</code> 두
+축으로 직접 제작</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>DataBinding → Compose</strong></td>
+<td>종료 예고를 보고 선제 전환 — 분산된 상태를 ViewModel 중심으로
+통합</td>
+</tr>
+</tbody>
+</table>
+<p>함께 넘어가기 위해 Compose/MVI 팀 스터디를 주최하고 코드 컨벤션을
+같이 다듬었습니다.</p>
+<p><strong>결과</strong><br />
+- Java → Kotlin <strong>28.8% → 99.2%</strong><br />
+- Compose + MVI 전환 후 <strong>동일 유형 작업의 예상 스토리포인트 20%
+감소</strong>(스프린트 작업 티켓 기준)<br />
+- 앱별 레포를 모노레포로 통합 → <strong>3개 앱 단일 구조</strong>
+운영<br />
+- OS 17 회전 디바이스 확장에 <strong>별도 대응 없이 자동
+호환</strong></p>
+<p>미리 옮겨둔 효과는 나중에 드러났습니다.</p>
+<p><strong>전환 뒤 빌드 최적화 | 2025.01 | 기여도 100%</strong></p>
+<p class="blk"><span class="lbl lbl-상황">상황</span>아키텍처를 옮기고 나니 다음 병목이
+빌드였습니다. 구버전 AGP로 최대 8분이 걸렸고, 병렬 빌드와 캐시가 모두
+꺼져 있어 증분 효과도 거의 없는 상태였습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>두 단계로 나눠 진행했습니다. 먼저
+VersionCatalog 도입으로 모듈 간 버전 불일치를 없앴습니다.</p>
+<p>이어서 <strong>kapt를 KSP로 전환하고 Kotlin 2.0으로
+올렸습니다.</strong> kapt는 어노테이션 처리를 위해 Java 스텁을 먼저
+만들어야 해서 느리고 유지보수 모드에 들어간 도구인 반면, KSP는 Kotlin
+코드를 직접 읽어 스텁 단계가 없습니다. Kotlin 2.0의 <strong>K2
+컴파일러</strong>는 컴파일 속도 자체가 빨라졌지만, kapt와 함께 쓰면 이전
+컴파일러 방식으로 되돌아가 그 이점을 얻을 수 없습니다. 두 가지가 서로
+맞물려 있어 KSP 전환과 Kotlin 2.0 업그레이드를 한 작업으로 묶어 빌드
+속도를 함께 끌어올렸습니다. 같은 PR에서 AGP·Gradle 최신화, groovy →
+Kotlin DSL, 병렬 빌드·캐시 활성화까지 함께 처리했습니다.</p>
+<p><strong>결과</strong><br />
+- 빌드 <strong>최대 8분 → 3분</strong></p>
+<p>이후에도 Gradle 빌드 추가 최적화와 Kotlin 데몬 메모리 분리(컴파일 OOM
+방지)를 이어갔습니다.</p>
+</div><p class="tags">Kotlin<span class="sep"> · </span>Compose<span class="sep"> · </span>MVI<span class="sep"> · </span>Flow<span class="sep"> · </span>멀티모듈<span class="sep"> · </span>모노레포<span class="sep"> · </span>Gradle Kotlin DSL<span class="sep"> · </span>KSP<span class="sep"> · </span>빌드 캐시</p></article><article class="csec" id="c1-4"><p class="cno">04</p><h3>AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계, 커버리지 20.6% → 83%</h3><p class="meta">테스트 자동화<span class="sep"> · </span>2025.07 ~ 2026.02<span class="sep"> · </span>기여도 100% · 팀 전체 적용</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>기존 자동 생성 스킬이 LINE 커버리지를
+20.6%까지 올려둔 상태였는데, 생성된 테스트가 실패하면 결국 사람이 붙어야
+해서 그 위로 올라가지 못하고 있었습니다.</p>
+<p>자동화에 앞서 <strong>테스트를 어떤 모양으로 쓸지부터
+정했습니다.</strong> Given-When-Then 패턴을 표준으로 잡아 요구사항
+단위로 시나리오를 설계했고, 대상은 ViewModel의 비즈니스 로직으로
+한정했고(JUnit5 · MockK · Turbine), UI 테스트는 이 파이프라인의 범위에
+넣지 않았습니다. <strong>형식이 정해져 있어야 자동 생성이 의미를
+갖는다</strong>고 봤기 때문입니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>생성만으로는 부족하다고 보고, <strong>고치는
+단계까지 넣은</strong> 5단계 파이프라인을 Claude Code로
+설계했습니다.</p>
+<pre><code>Planner → Scaffold → Generator → Healer → Coverage
+                          ↑          ↓
+                          └──────────┘  실패 테스트 자동 진단·수정 루프</code></pre>
+<p>핵심은 네 번째 <strong>수정 단계(Healer)</strong> 입니다. 실패한
+테스트를 자동 진단해 고치고 다시 검증 루프를 도는 구조라, 사람 개입 없이
+통과 가능한 지점까지 도달합니다.</p>
+<p><strong>결과</strong><br />
+- <strong>3,805줄 ViewModel 기준</strong> LINE <strong>20.6% →
+83%</strong> / BRANCH 6.3% → 52% / METHOD 30% → 88% — 이후 전체
+ViewModel에 적용<br />
+- QA 집계 기준 <strong>회귀 버그 티켓 50% 감소</strong></p>
+<p>세 지표를 함께 보는 이유는 LINE만으로는 분기 미탐지가 가려지기
+때문입니다.</p>
+<p class="blk"><span class="lbl lbl-회고">회고</span>초기에 relaxed mock을 쓰다 분기를 못 잡는
+문제가 있었습니다. MockWebServer + JSON fixture 패턴으로
+전환했습니다.</p>
+</div><p class="tags">Claude Code<span class="sep"> · </span>JUnit5<span class="sep"> · </span>Turbine<span class="sep"> · </span>MockK<span class="sep"> · </span>JaCoCo</p></article><article class="csec" id="c1-5"><p class="cno">05</p><h3>네이버페이 매장결제 연동, 결제 승인 대기 구간을 폴링 방식으로 제안·구현</h3><p class="meta">네이버 연동 고도화<span class="sep"> · </span>2025.11 ~ 2026.05<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>네이버 헤어샵을 통한 고객 유입을 늘리기 위해
+네이버페이 <strong>매장결제·예약금·쿠폰·스타일 태그</strong>를 앱에
+연동하는 프로젝트였습니다. 매장결제는 앱에서 결제를 요청한 뒤 고객이
+자기 휴대폰에서 결제를 마칠 때까지 앱이 기다려야 하는 구조라, 그 사이에
+결제 결과를 앱이 알 방법이 필요했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>서버가 앱으로 결과를 알려주는 방식이 더
+낫다고 봤지만 작업 공수가 매우 짧았습니다. 그래서 <strong>타임아웃을
+두고 일정 주기로 승인 여부를 API로 확인하는 폴링 방식</strong>을 먼저
+도입하자고 제안해 구현했습니다. 화면은 결제 요청 → 진행 중 → 완료 →
+환불까지 전 플로우를 Compose + 자체 MVI로 만들었고, 스타일 태그는
+카테고리별 복수 선택이 가능한 바텀시트로 구현했습니다. 백엔드 API가
+나오기 전에는 로컬 JSON 목 데이터로 통신 케이스를 미리 만들어 개발하고
+엣지 케이스를 먼저 공유했습니다. 외부 결제가 섞이면서 달라지는
+매출·포인트 계산은 경우별로 백엔드와 규칙을 다시 맞췄습니다.</p>
+<p><strong>결과</strong><br />
+- 매장결제 · 예약금 · 쿠폰 · 스타일 태그 <strong>배포</strong><br />
+- 매출 ViewModel 단위 테스트는 <strong>자체 테스트 생성 파이프라인으로
+작성</strong>, <strong>네이버 예약 검증 E2E</strong> 플로우 구축</p>
+<p class="blk"><span class="lbl lbl-회고">회고</span>폴링은 짧은 일정에 맞춘 선택이었습니다.
+서버가 결과를 알려주는 방식이 더 낫다는 점은 제안할 때 함께
+공유했습니다.</p>
+</div><p class="tags">Compose<span class="sep"> · </span>MVI<span class="sep"> · </span>외부 결제 연동<span class="sep"> · </span>Polling<span class="sep"> · </span>단위 테스트<span class="sep"> · </span>E2E</p></article><article class="csec" id="c1-6"><p class="cno">06</p><h3>Claude Code 커스텀 스킬 14종으로 Android 개발 반복 작업 자동화</h3><p class="meta">AI 기반 Android 개발 고도화<span class="sep"> · </span>2025.07 ~ 2026.02<span class="sep"> · </span>기여도 100% · 팀 전파</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>테스트 코드 작성, Compose UI 구현, API 연동
+코드, 문자열 리소스, 작업 티켓·브랜치·커밋·PR 생성처럼 작업마다 반복되는
+일이 많았습니다. AI 도구를 들인 초기에는 활용 수준이 사람마다 크게
+갈렸고, 각자 만든 스킬과 설정은 로컬에만 있어 옆 사람이 볼 방법이
+없었습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>반복 작업을 <strong>Claude Code 커스텀 스킬
+14종</strong>(<code>create-api</code>, <code>compose-ui</code>,
+<code>string-resource</code>, <code>backlog-refiner</code>,
+<code>command-creator</code> 등)과 MCP(Figma·Notion) 연결로
+자동화했습니다. 가장 까다로웠던 건 UI였습니다. 토큰 제약 때문에 화면
+전체를 한 번에 맡기기 어려워, <strong>Figma 디자인 가이드와
+디자인시스템(컬러·타이포그래피·컴포넌트)을 컨벤션 문서로
+구조화</strong>해 가이드에 가까운 Compose 코드가 나오도록 했습니다.
+브랜치·커밋·PR·문자열 리소스 컨벤션도 같은 방식으로 문서화했습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>반복되는 작업을 AI에 위임해 핵심 개발에
+집중할 수 있는 환경을 만들어 생산성을 높임 · 스킬 14종과 컨벤션 문서를
+레포에 올리고 사용법을 <strong>팀 공통 문서</strong>로 전파해 팀원들도
+사용 · 플랫폼이 달라도 서로의 스킬을 볼 수 있게 팀 간 레포 열람 권한을
+정리 · <code>compose-ui</code>로 만든 화면은 대부분 큰 수정 없이 리뷰를
+통과</p>
+</div><p class="tags">Claude Code<span class="sep"> · </span>MCP<span class="sep"> · </span>프롬프트·컨텍스트 엔지니어링<span class="sep"> · </span>컨벤션 문서화</p></article><article class="csec" id="c1-7"><p class="cno">07</p><h3>통계 화면을 Compose로 구현하고 막대·라인·테이블 차트를 직접 구현</h3><p class="meta">통계 개선<span class="sep"> · </span>2025.01 ~ 06 · 2026.01 ~ 05<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>통계 정합성 문제로 제공 중인 통계의 신뢰도가
+떨어져 있었습니다. 통계 메뉴는 항목 나열 구조였고,
+직원·고객·시간별·요일별 분석 화면은 네이티브에 없었습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>먼저 결제수단 다양화와 함께 통계 3종을 다시
+만들었습니다. Compose 차트 라이브러리가 레퍼런스가 적고 커스터마이징에
+제약이 있어, 디자인 가이드를 반영해 차트를 직접 구현하고 확장성과 UX
+일관성을 기준으로 설계했습니다.</p>
+<p>이후 이 차트 컴포넌트 위에 네 화면을 Compose로 구현했습니다. 차트는
+막대·라인·테이블 세 종류를 직접 구현했습니다. 시간별·요일별 차트는
+매출이 없는 시간대를 영업시간 기준으로 x축에 채우고, 24시 자정을 넘는
+구간과 화면별 y축 단위를 따로 처리했습니다. 직원 통계 목록은 스크롤이
+무거워 <code>derivedStateOf</code>·shadow·NumberFormat 재사용으로
+최적화했습니다. 채널별·고객 통계처럼 웹 대시보드에 있는 화면은 브릿지로
+네이티브↔︎웹을 오가게 연결했고, 메뉴는 용도별 3개 그룹 카드로
+재편했습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>통계 3종과 직원·고객·시간별·요일별 분석 화면
+배포 · 메뉴를 3그룹으로 재편해 매장이 한눈에 볼 수 있는 통계 화면
+제공</p>
+</div><p class="tags">Compose<span class="sep"> · </span>차트 직접 구현<span class="sep"> · </span>WebView Bridge<span class="sep"> · </span>derivedStateOf</p></article><article class="csec" id="c1-8"><p class="cno">08</p><h3>여러 결제수단이 섞이는 매출 등록 화면을 Compose + MVI로 재설계</h3><p class="meta">결제수단 다양화<span class="sep"> · </span>2025.01 ~ 06<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>매출 구조가 결제수단 하나를 전제로 만들어져
+여러 결제수단을 함께 받을 수 없었습니다. 매출 로직이 복잡한데 UI까지
+직접 제어하는 구조라 유지보수와 기능 변경 때마다 비용이 컸습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>매출 등록 화면의 상호작용 로직을 상태
+기반으로 구조화하고 Compose + MVI로 재설계했습니다. 백엔드 API가 나오기
+전에는 로컬 JSON 목 데이터로 통신 케이스를 미리 만들어 개발했습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>매출 등록/수정 · 포인트 · 회원권 결제 차감
+전면 구현 후 배포 · 담당 직원 복수 선택 등 기획 변경에 낮은 비용으로
+대응 · 함께 진행한 통계 3종은 「7. 통계 개선」에 정리</p>
+<p class="blk"><span class="lbl lbl-회고">회고</span>기존 정책을 유지하는 로직에서도 결제 구조
+개편의 사이드 이펙트가 났습니다. 변경 사항 간 연관성을 미리 점검했어야
+했습니다.</p>
+</div><p class="tags">Compose<span class="sep"> · </span>MVI<span class="sep"> · </span>로컬 목 데이터</p></article><article class="csec" id="c1-9"><p class="cno">09</p><h3>고객 필터·그룹 기능을 B2B 앱 첫 Compose 화면으로 구현</h3><p class="meta">고객 목록 개선<span class="sep"> · </span>2024.07 ~ 11<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>고객 목록에 필터·그룹 기능이 없어 매장이
+고객을 나눠 관리하기 불편했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span><strong>B2B 앱에 Compose를 처음
+도입</strong>하고 자체 MVI 프레임워크를 실제 화면에 처음 얹었습니다.
+필터·그룹은 조건 카테고리가 전부 숨김일 때의 노출 정책과, 필터 수정 후
+복귀 시 리프레시 시나리오를 먼저 정의해 프론트·백엔드와 합의했고, 화면
+전환 구조는 iOS와 회의록을 만들어 함께 정리했습니다. 디자인시스템
+컴포넌트(테이블·Chip·TextField·SideModal)를 함께 만들었고 Chip은
+디자이너에게 요청해 신설했습니다. 실시간 검색은 debounce로 불필요한 API
+호출을 줄였고, 드래그앤드롭은 OS 업데이트로 외부 라이브러리가 깨져 직접
+구현으로 바꿨습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>필터·그룹 기능 배포 · B2B 앱의 Compose 전환
+시작점</p>
+</div><p class="tags">Compose<span class="sep"> · </span>MVI<span class="sep"> · </span>디자인시스템 컴포넌트<span class="sep"> · </span>Paging3<span class="sep"> · </span>Turbine</p></article><article class="csec" id="c1-10"><p class="cno">10</p><h3>웹뷰 브릿지를 공통 함수로 규격화해 플랫폼별 캘린더를 통일</h3><p class="meta">캘린더·예약 개편<span class="sep"> · </span>2022.08 ~ 2023.07<span class="sep"> · </span>기여도 90%</p><p class="teamline">팀 구성 — Android 2 · iOS 2 · Frontend 2 · Backend 3 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>플랫폼별 캘린더 UX가 달라 사용자 혼란이
+있었고, 웹뷰 화면마다 인증과 네비게이션을 매번 다시 붙이고
+있었습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>이 프로젝트 하나만 고치는 대신
+<strong>다음에도 쓸 수 있는 구조</strong>를 만들기로 했습니다. 웹뷰
+브릿지 자체는 직전 프로젝트에서 메시지 발송 화면용으로 처음 만들었는데,
+그때는 화면 하나에 맞춘 것이었습니다. 캘린더에서 이를 <strong>공통 함수
+15개 이상으로 컨벤션화하고 문서화</strong>해, 쿠키 인증 + 단일 Activity
+구성으로 화면 뎁스와 무관하게 재사용되게 했습니다. 테스트가 없던
+시점이라 JUnit5도 이 프로젝트에서 처음 들였습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>이후 메시지 발송·네이버 연동 등 <strong>새로
+추가된 WebView 기능이 이 브릿지를 재사용</strong></p>
+<p class="blk"><span class="lbl lbl-회고">회고</span>초기 고객 니즈 파악이 미흡해 클레임이
+발생했습니다. 이를 계기로 기획 단계에 고객 인터뷰 프로세스를
+제안했습니다.</p>
+</div><p class="tags">WebView Bridge<span class="sep"> · </span>Paging3<span class="sep"> · </span>FCM<span class="sep"> · </span>JUnit5</p></article><article class="csec" id="c1-11"><p class="cno">11</p><h3>배포 장애를 계기로 RemoteConfig 피처 플래그를 제안·도입하고 정기 배포로 전환</h3><p class="meta">통합 회원가입<span class="sep"> · </span>2021.11 ~ 2022.03<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1 · iOS 1 · Frontend 1 · Backend 2 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>원장과 직원의 회원가입이 분리돼 있었습니다.
+VOC·버그 대응으로 주 2~3회 불규칙하게 배포하던 상황이었습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>회원가입을 통합하고 강제/선택 업데이트를
+구현했습니다. 배포 후 백엔드 롤백이 필요한 크리티컬 이슈가 났는데,
+네이티브 앱은 심사와 배포를 거쳐야 해서 기민하게 대응하기 어려웠습니다.
+그래서 <strong>Firebase RemoteConfig 피처 플래그 도입을 제안</strong>해
+배포 없이 기능을 켜고 끌 수 있게 했고, 불규칙 배포를 정기 배포로
+바꿨습니다. 업무 우선순위 제도도 함께 도입했습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>통합 회원가입 배포. 이후 장애는 앱 배포 없이
+피처 플래그로 기능을 내려 대응할 수 있게 됐고, 이후 큰 프로젝트 배포에서
+활용했습니다</p>
+<p class="blk"><span class="lbl lbl-회고">회고</span>백엔드는 바로 되돌릴 수 있어도 네이티브 앱은
+장애에 기민하게 대응하기 어렵다는 것을 겪었습니다. 정기 배포와 피처
+플래그가 왜 필요한지 이때 체감했습니다.</p>
+</div><p class="tags">RemoteConfig<span class="sep"> · </span>피처 플래그<span class="sep"> · </span>정기 배포</p></article><div class="csub" id="clead"><h4 class="ch3">네이티브 팀장</h4><div class="cbody tailbody"><p class="meta">
+2025.11 ~ 2026.05 (7개월)
+</p>
+<p class="teamline">
+Android 2(본인 포함) · iOS 2 · QA 1 네이티브 팀
+</p>
+<ul>
+<li>업무 분배·플랫폼 간 의존성 관리·배포 일정 조율, 기술 의사결정
+주도(MVI 선택, AI 도구 선정). 채용 기준 수립·JD 작성</li>
+<li><strong>스프린트 회고 주관</strong> — 프로젝트 팀별 컨디션·진행
+상태, 기술 전략 효과 검토, 다음 액션 아이템을 같은 틀로 점검</li>
+<li><strong>1on1 운영</strong> — 몰입도, 목표 대비 진척, 장애물, 업무
+기대치, 지원 요청을 같은 질문으로 확인하고 다면평가 피드백을 전달</li>
+<li><strong>구성원의 AI 활용 지원</strong> — 회고를 AI 주제로 편성해 한
+달간의 흐름과 도구를 정리해 공유. 회사에 기여하면서 각자 성장할 수
+있도록 구성원별 AI 과제를 목표 수치와 함께 직접 설계하고 회고에서 점검 —
+기획·디자인 문서 기반 로직 생성 후 PR 제출, Crashlytics 크래시 자동
+분석·수정 PR, 위키 기반 테스트 케이스 설계, Maestro E2E 자동화</li>
+<li><strong>장애 회고</strong> — 장애가 나면 회고를 열어 재발 방지
+항목과 담당을 정함</li>
+<li>팀원들과 AI 도구 활용법을 공유했고, iOS 개발자가 Perplexity 기반
+정책봇을 만드는 등 플랫폼 경계를 넘는 시도로 이어졌습니다.</li>
+</ul>
+</div></div><div class="csub" id="cetc"><h4 class="ch3">그 밖의 작업</h4><div class="cbody tailbody"><h4 class="ch4">
+Android 15/16 EdgeToEdge·키보드 인셋 대응
+</h4>
+<p class="meta">
+2025.02 ~ 06 · 개선 과제
+</p>
+<p>EdgeToEdge 강제 적용으로 생긴 시스템 바–콘텐츠 겹침을 핫픽스 2회로
+먼저 수습한 뒤, 정책 대응 설계로 전환. <code>adjustResize</code>에
+기대던 키보드 대응이 Android 15에서 동작하지 않아 <strong>키보드에 입력
+필드가 가려지는 문제</strong>를 <code>WindowInsets.ime</code> 기반으로
+재처리(키보드·내비바 인셋 중 큰 값을 하단 여백으로 적용).</p>
+<h4 class="ch4">
+상담봇 RAG 적용·최적화
+</h4>
+<p class="meta">
+2026.04 ~ 05 · 기여도 100%
+</p>
+<p class="blk"><span class="lbl lbl-상황">상황</span>선임자로부터 사내 AI 봇 운영을
+인수받았습니다. 고객 상담봇은 <strong>최상위 모델이 질문마다 지식 베이스
+전체를 훑어 답하는 구조</strong>라 토큰 소모가 컸고, 가장 높은 요금제를
+쓰고도 사용 한도에 걸려 업무 시간 중에 상담이 멈추는 일이 생겼습니다.
+자동응답 회수율도 22%에 머물렀습니다. 비용과 품질을 함께 고쳐야 한다고
+보고 최적화를 시작했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>고객에게 바로 나가는 시스템이라 비대칭
+리스크가 있다고 봤고, 개선안을 바로 넣는 대신 <strong>측정 인프라부터
+만들었습니다.</strong> 오답률·회수율·건당 비용 3축을 매일 자동 수집한
+뒤, RAG 파이프라인과 토큰 구조를 재설계해 <strong>8개 variant를 Shadow
+A/B로 비교</strong>하고 대부분을 기각했습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>최종 후보 측정값<br />
+- 건당 비용 <strong>₩2,173 → ₩97</strong> (-96%)<br />
+- 자동응답 회수율 <strong>22% → 43%</strong><br />
+- overconfidence 73% → 20%</p>
+<p><strong>다만 배포하지 않았습니다.</strong> 카나리 배포 직전 지식
+베이스 감사에서 <strong>자격 증명 평문 6건</strong>(플레이스토어 계정
+포함)과 회사 계좌 2건을 발견했기 때문입니다. 정규식 1차 필터에 LLM 2차
+검증을 붙인 탐지 파이프라인을 직접 만들어 찾아냈고, <strong>하나의 base
+비밀번호가 4개 서비스에서 변형 재사용</strong>되는 패턴까지
+드러났습니다.</p>
+<p>이 기간 운영에 반영한 것은 최우선 버그 7건 수정과 지식 베이스
+카테고리 표준 분류 724건입니다. 파이프라인 개선분은 보안 보고서와 조치
+권고를 올리고 <strong>봇 검색용 데이터와 사람 검토용 데이터를
+분리</strong>하는 설계 변경을 제안하는 데서 마무리했습니다. 지표가
+좋아도 상담봇이 자격 증명을 답변에 실을 수 있는 상태로는 내보낼 수
+없다고 판단했습니다.</p>
+<p><code>RAG</code> <code>Shadow A/B</code>
+<code>프롬프트 엔지니어링</code> <code>보안 감사</code></p>
+<h4 class="ch4">
+상담 이력 자동 등록
+</h4>
+<p class="meta">
+2026.04 ~ 05 · 단독 · 운영 반영
+</p>
+<p>상담봇을 들인 뒤 새 공백이 생겼습니다. 종료된 상담은 관리자 페이지에
+직접 입력해야 하는데, 사람 상담사가 처리한 건은 본인이 등록하지만
+<strong>봇이 처리한 건은 아무도 등록하지 않았습니다.</strong> 그만큼
+문의 통계와 해지 분석에서 빠지고 있었습니다.<br />
+<span class="lbl">한 일</span> 종료된 상담을 LLM으로 대·중·소 3단 분류해 자동
+등록하는 작업을 만들어 <strong>평일 10분 주기로 운영에 반영</strong> ·
+분류 기준은 CX 리드·상담사와 함께 맞춤 · 중복 등록 방지 기준을 자체 상태
+파일이 아닌 상담 솔루션의 처리 상태값에 두어 스크립트가 죽어도 판정이
+흔들리지 않게 함 · 등록은 됐는데 상태 전환만 실패한 건은 재처리 큐로
+분리 · 모델이 고른 카테고리가 실제 분류 트리에 있는지 역검증하고,
+확신도가 낮으면 ’기타’로 처리</p>
+<h4 class="ch4">
+AI 봇 운영 대시보드
+</h4>
+<p class="meta">
+2026.05 · 단독
+</p>
+<p>사내 AI 봇들의 토큰 소모가 커서 사용 한도에 자주 걸렸는데, 어느 봇이
+얼마나 쓰는지와 봇이 살아 있는지는 <strong>개발자가 터미널로만 확인할 수
+있었습니다.</strong><br />
+<span class="lbl">한 일</span> 봇별 토큰 사용량을 수집해
+<strong>기간별(5시간·7일·오늘)·모델별·봇별 차트</strong>로 보여주는 웹
+화면을 설계·구현 · 봇 상태를 정상·주의·오류 3단계로 표시하고
+<strong>실시간 로그 보기와 재시작 버튼</strong>을 붙여, 문제가 생겼을 때
+터미널 없이도 원인을 보고 다시 띄울 수 있게 함 · 새 봇은 자동 감지 ·
+상시 떠 있는 화면이라 메모리·CPU 부하를 최소화하는 것을 제약으로 둠 ·
+사용 가이드를 문서로 남겨 <strong>직무와 상관없이 누구나 보고 조치할 수
+있게</strong> 공유</p>
+<h4 class="ch4">
+사내 API용 MCP 서버
+</h4>
+<p class="meta">
+2026.05 · 단독
+</p>
+<p>사내 백엔드 API를 Claude Code에서 다루기 위해 TypeScript로 로컬 MCP
+서버를 만들었습니다. 퇴사를 앞두고도 회사에 조금이라도 더 기여하고 싶어
+시작했고, 완성 후 네이티브 팀 구성원에게 설치·사용법을 전파해 쓸 수 있게
+했습니다.<br />
+<span class="lbl">한 일</span> <strong>도구 87개</strong> 구현(GET 84 / WRITE
+3) · 53개에 직원 권한 코드 7종 매핑으로 접근 제한 + 연락처 마스킹 ·
+토큰을 평문 파일 대신 macOS Keychain에서 로드</p>
+</div></div></section><section id="co2"><h2>(주) 대교</h2><p class="subline">Android 프리랜서<span class="sep"> · </span>2020.12 ~ 2021.06</p><p class="text"><strong>대교 써밋 국어</strong> — 초등학생 국어 학습 태블릿 앱 · 필기와 음성이 주 입력 방식</p><article class="csec" id="c2-1"><p class="cno">01</p><h3>S-Pen 필기 입력과 음성 인식을 학습 화면에 통합</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>초등학생 국어 학습 앱이라 필기와 음성이 주
+입력 방식이었습니다. 학습 노트와 문제 풀이에는 필기가, 소리 내어 읽기
+평가에는 음성 인식이 필요했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>Samsung S-Pen SDK로 <strong>학습 노트·문제
+풀이 영역</strong>에 필기 인식을 구현했습니다(필압 감지·손바닥 리젝션).
+음독 평가는 음성 인식(STT)을 통합했는데, 벤더는 같은 문구로 구글 STT와
+비교 테스트해 <strong>한글 인식률이 우위였던 셀바스 AI</strong>로
+정했습니다.</p>
+</div><p class="tags">Samsung S-Pen SDK<span class="sep"> · </span>셀바스 AI STT<span class="sep"> · </span>Java</p></article><article class="csec" id="c2-2"><p class="cno">02</p><h3>학습 결과 시각화와 앱 안정성 관리</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>학습 결과를 아이가 한눈에 볼 수 있게 보여줘야
+했고, 교육용 태블릿 여러 기종에서 안정적으로 돌아가야 했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>MPAndroidChart 차트와 WebView 기반
+워드클라우드로 학습 결과를 시각화했습니다. Android Profiler로 메모리
+사용을 분석해 최적화했고, Galaxy Tab S6 Lite부터 S7+까지 기종별 호환성을
+맞췄습니다. Volley로 네트워크 통신을 구성하고 Firebase
+Crashlytics·Analytics·IMQA로 모니터링 체계를 갖췄으며, 코드는
+Javadoc으로 문서화했습니다.</p>
+</div><p class="tags">MPAndroidChart<span class="sep"> · </span>WebView<span class="sep"> · </span>Android Profiler<span class="sep"> · </span>Crashlytics<span class="sep"> · </span>IMQA</p></article></section><section id="co3"><h2>메디팔</h2><p class="subline">Android 프리랜서<span class="sep"> · </span>2020.06 ~ 2020.07</p><p class="text"><strong>메디팔</strong> — 환자와 간호사를 1:1로 매칭해 건강관리를 제공하는 서비스</p><article class="csec" id="c3-1"><p class="cno">01</p><h3>WebSocket 기반 실시간 채팅을 직접 구현하고 2개월 안에 배포</h3><p class="meta">메디팔 앱<span class="sep"> · </span>2020.06 ~ 2020.07<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>Android 앱을 착수 단계부터 혼자 맡았습니다.
+환자와 간호사가 실시간으로 대화하는 채팅이 핵심 기능이었습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>텍스트와 이미지를 주고받는 채팅방을
+WebSocket으로 직접 구현했습니다. 채팅 이미지는 기기에 캐싱해 대화 기록을
+다시 볼 때 매번 내려받지 않게 했습니다. Retrofit 기반 네트워크 통신,
+ExoPlayer 미디어 플레이어, 채널톡 API 연동, FCM 푸시를 함께
+구현했습니다.</p>
+<p class="blk"><span class="lbl lbl-결과">결과</span>착수부터 배포까지 2개월 · 자체 QA 후 스토어
+배포</p>
+</div><p class="tags">WebSocket<span class="sep"> · </span>Retrofit<span class="sep"> · </span>ExoPlayer<span class="sep"> · </span>FCM<span class="sep"> · </span>Java</p></article></section><section id="co4"><h2>(주) 씨커스블록체인</h2><p class="subline">Android<span class="sep"> · </span>2018.08 ~ 2019.09</p><p class="text"><strong>비트탑</strong> — 암호화폐 거래소 앱</p><article class="csec" id="c4-1"><p class="cno">01</p><h3>Web3j로 이더리움 네트워크를 앱에서 직접 연동</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09<span class="sep"> · </span>기여도 30%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 앱에서 이더리움과 ERC-20 토큰의
+잔액·거래 내역을 모바일 화면에 보여줘야 했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span><strong>Web3j</strong>로 이더리움 네트워크와
+직접 통신하는 모듈을 개발해 ERC-20 토큰 잔액과 거래 내역을 조회하고
+화면에 표시했습니다. 블록체인 통신의 <strong>비동기 처리와 에러
+핸들링</strong>을 구현했고, 실시간 시세 조회·거래 기능, <strong>키스토어
+기반 개인키 관리</strong>, PIN·지문 인증을 맡았습니다.</p>
+</div><p class="tags">Web3j<span class="sep"> · </span>Keystore<span class="sep"> · </span>Java</p></article><article class="csec" id="c4-2"><p class="cno">02</p><h3>인증 연동과 품질 관리, 백엔드 REST API 개발</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09<span class="sep"> · </span>기여도 30%</p><div class="cbody"><p class="blk"><span class="lbl lbl-해결">해결</span>WebView로 휴대전화 본인확인(다날)과
+도로명주소 입력을 연동했습니다. LeakCanary로 메모리 누수를 점검하고
+FCM·Analytics·Crashlytics를 도입했습니다. Android와 함께
+<strong>Spring·JPA 기반 백엔드 REST API도 직접
+개발</strong>했습니다.</p>
+</div><p class="tags">Spring<span class="sep"> · </span>JPA<span class="sep"> · </span>LeakCanary<span class="sep"> · </span>FCM</p></article></section>
+<footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-09-18</footer>
+</main>
+</div>
+<script>
+(function(){var links=[].slice.call(document.querySelectorAll("#toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})})},{rootMargin:"-20% 0px -70% 0px"});secs.forEach(function(s){s&&io.observe(s)})}
+})();
+</script>
+</body></html>
