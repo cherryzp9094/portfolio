@@ -129,29 +129,28 @@ footer{padding:24px 0 56px;border-top:1px solid var(--rule);color:var(--ink3);fo
   </ul>
 </aside>
 <main id="top">
-<section id="ctop"><h1>경력기술서</h1><p class="about-note">프로젝트마다 상황, 해결, 결과, 회고 순서로 적었습니다. 요약은 <a href="index.html">이력서</a>에 있습니다.</p></section><section id="co1"><h2>(주) 헤렌</h2><p class="subline">Android Developer → 네이티브 팀장<span class="sep"> · </span>2021.11 ~ 2026.05</p><p class="text"><strong><a href="https://play.google.com/store/apps/details?id=com.gongnailshop.herren_dell1.gongnailshop" target="_blank" rel="noopener">공비서 원장님</a></strong> — 뷰티 B2B SaaS CRM · Google Play <strong>10만+ 다운로드</strong> · 평점 4.2 (리뷰 662)</p><article class="csec" id="c1-1"><p class="cno">01</p><h3>Keystore 기반 로컬 개인정보 암호화</h3><p class="meta">데이터 암호화 마이그레이션<span class="sep"> · </span>2025.08<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span><strong>로컬에 저장된 고객 개인정보와 설정
-데이터가 평문으로 남아 있는 문제</strong>를 직접 찾아 주도적으로
-개선했습니다. SharedPreferences를 DataStore로 옮기려 했지만
-<strong>DataStore도 기본 암호화를 제공하지 않아</strong> 저장 계층
-자체에 암호화를 넣어야 했습니다.</p>
-<p class="blk"><span class="lbl lbl-해결">해결</span><strong>DataStore의 Serializer 단계에 암호화
-계층을 끼워</strong> 저장 시 암호화·로드 시 복호화가 자동으로 일어나게
-했습니다. 쓰는 쪽 코드는 평소와 똑같습니다. 키는 <strong>Android
-Keystore에서 AES-256-GCM으로 생성·관리</strong>했고,
-<strong>AEAD</strong>를 적용해 기밀성과 무결성·변조 검증을 함께
-확보했습니다. 이미 배포된 앱의 데이터라 <strong>3단계 무중단
-마이그레이션</strong>으로 옮겼습니다(신규는 암호화 DataStore → 기존
-SharedPreferences는 실행 시 읽어 이관 → 완료 후 삭제).</p>
+<section id="ctop"><h1>경력기술서</h1><p class="about-note">프로젝트마다 상황, 해결, 결과, 회고 순서로 적었습니다. 요약은 <a href="index.html">이력서</a>에 있습니다.</p></section><section id="co1"><h2>(주) 헤렌</h2><p class="subline">Android Developer → 네이티브 팀장<span class="sep"> · </span>2021.11 ~ 2026.05</p><p class="text"><strong><a href="https://play.google.com/store/apps/details?id=com.gongnailshop.herren_dell1.gongnailshop" target="_blank" rel="noopener">공비서 원장님</a></strong> — 뷰티 B2B SaaS CRM · Google Play <strong>10만+ 다운로드</strong> · 평점 4.2 (리뷰 662)</p><article class="csec" id="c1-1"><p class="cno">01</p><h3>Keystore 기반 로그인 정보 암호화</h3><p class="meta">데이터 암호화 마이그레이션<span class="sep"> · </span>2025.08<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span><strong>로그인 비밀번호가 기기에 평문으로
+저장되는 문제</strong>를 직접 찾아 주도적으로 개선했습니다.
+SharedPreferences를 DataStore로 옮기려 했지만 <strong>DataStore도 기본
+암호화를 제공하지 않아</strong> 저장소 자체에 암호화를 넣어야
+했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span><strong>DataStore를 감싼 보안
+저장소</strong>를 만들어, 값을 저장할 때 암호화하고 읽을 때 복호화하도록
+했습니다. 키는 <strong>Android Keystore에서 AES-GCM으로
+생성·관리</strong>해 앱 밖으로 꺼낼 수 없게 했습니다. 비밀번호를 쓰던
+화면 7곳(로그인, 회원가입, 스플래시, 회원정보 수정 등)을 이 저장소로
+직접 옮겼고, 이미 배포된 앱의 평문 데이터는 <strong>앱 시작 시 암호화
+저장소로 옮긴 뒤 삭제</strong>해 강제 업데이트 없이 전환했습니다.</p>
 <p class="blk"><span class="lbl lbl-결과">결과</span>강제 업데이트 없이 전환 · <strong>로그인 실패
 0건</strong></p>
-</div><p class="tags">Android Keystore<span class="sep"> · </span>AES-256-GCM<span class="sep"> · </span>DataStore<span class="sep"> · </span>Serializer</p></article><article class="csec" id="c1-2"><p class="cno">02</p><h3>위젯 Glance 재구축</h3><p class="meta">Compose 위젯 리뉴얼<span class="sep"> · </span>2024.11 ~ 12<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>RemoteViews 기반 레거시 위젯이 유지보수가
+</div><p class="tags">Android Keystore<span class="sep"> · </span>AES-GCM<span class="sep"> · </span>DataStore</p></article><article class="csec" id="c1-2"><p class="cno">02</p><h3>위젯 Glance 재구축</h3><p class="meta">Compose 위젯 리뉴얼<span class="sep"> · </span>2024.11 ~ 12<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>RemoteViews 기반 레거시 위젯이 유지보수가
 어려웠고, 앱과 위젯 사이 데이터가 어긋나 값이 오래된 채로 남는다는 VOC,
 고해상도 기기에서 텍스트가 안 읽힌다는 VOC가 들어왔습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>RemoteViews를 <strong>Jetpack
-Glance</strong>로 옮겼습니다. Compose 문법이지만 실제로는 RemoteViews
-제약 안에서 돌아 LazyColumn 같은 기본 컴포넌트가 없고 공식 문서도
-부족해, <strong>Glance 라이브러리 소스를 직접 분석</strong>하며
-진행했습니다.</p>
+Glance</strong>로 옮겼습니다. Compose 문법으로 작성하지만 실제로는
+<strong>RemoteViews로 변환돼</strong> 홈 화면에 그려지기 때문에 일반
+Compose와 쓸 수 있는 컴포넌트와 스타일이 달라, <strong>Glance 라이브러리
+소스를 직접 분석</strong>하며 진행했습니다.</p>
 <p>동기화는 WorkManager 주기 작업 + DataStore(Protobuf)로 — JSON보다
 파싱 오버헤드가 적어 위젯처럼 제한된 환경에 맞다고 봤습니다.</p>
 <p>절전 모드는 VOC로 들어온 것이 아니라 작업 중 직접 조사해 위젯
@@ -565,7 +564,7 @@ FCM·Analytics·Crashlytics를 도입했습니다. Android와 함께
 <strong>Spring·JPA 기반 백엔드 REST API도 직접
 개발</strong>했습니다.</p>
 </div><p class="tags">Spring<span class="sep"> · </span>JPA<span class="sep"> · </span>LeakCanary<span class="sep"> · </span>FCM</p></article></section>
-<footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-09-29</footer>
+<footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-10-04</footer>
 </main>
 </div>
 <script>
