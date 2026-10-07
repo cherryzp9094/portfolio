@@ -148,9 +148,8 @@ SharedPreferences를 DataStore로 옮기려 했지만 <strong>DataStore도 기�
 고해상도 기기에서 텍스트가 안 읽힌다는 VOC가 들어왔습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>RemoteViews를 <strong>Jetpack
 Glance</strong>로 옮겼습니다. Compose 문법으로 작성하지만 실제로는
-<strong>RemoteViews로 변환돼</strong> 홈 화면에 그려지기 때문에 일반
-Compose와 쓸 수 있는 컴포넌트와 스타일이 달라, <strong>Glance 라이브러리
-소스를 직접 분석</strong>하며 진행했습니다.</p>
+<strong>RemoteViews로 변환돼</strong> 홈 화면에 그려지기 때문에, 일반
+Compose와 쓸 수 있는 컴포넌트와 스타일이 다릅니다.</p>
 <p>동기화는 WorkManager 주기 작업 + DataStore(Protobuf)로 — JSON보다
 파싱 오버헤드가 적어 위젯처럼 제한된 환경에 맞다고 봤습니다.</p>
 <p>절전 모드는 VOC로 들어온 것이 아니라 작업 중 직접 조사해 위젯
