@@ -171,8 +171,8 @@ LeakCanary는 이후 팀 빌드 옵션으로 정착</p>
 </div><p class="tags">Glance<span class="sep"> · </span>WorkManager<span class="sep"> · </span>DataStore(Protobuf)<span class="sep"> · </span>LeakCanary</p></article><article class="csec" id="c1-3"><p class="cno">03</p><h3>레거시 아키텍처 Kotlin·Compose 전환</h3><p class="meta">레거시 아키텍처 전환<span class="sep"> · </span>2021.11 ~ 2026.05 · 재직 기간 동안 단계적으로 진행<span class="sep"> · </span>기여도 30%</p><p class="teamline">팀 구성 — Android 3</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>Java 71%의 MVC + AsyncTask 레거시. 앱마다
 레포가 나뉘어 있어 공통 코드가 중복됐습니다. 서비스는 계속 굴러가야
 했으므로 한 번에 갈아엎는 선택지는 없었습니다.</p>
-<p class="blk"><span class="lbl lbl-해결">해결</span>서비스를 멈추지 않으려고 축을 4개로 나눠 순차
-전환했습니다(Kotlin → 모노레포 → MVI → Compose).</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>서비스를 멈추지 않으려고 4단계로 나눠 순차
+전환했습니다.</p>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -190,49 +190,35 @@ LeakCanary는 이후 팀 빌드 옵션으로 정착</p>
 <tr>
 <td>1</td>
 <td><strong>Java → Kotlin</strong></td>
-<td>신규 프로젝트는 Kotlin으로 시작, 레거시는 <strong>영향도가 낮은
-파일부터 높은 순으로</strong> 전환</td>
+<td>신규는 Kotlin으로 시작, 레거시는 영향도가 낮은 파일부터 전환</td>
 </tr>
 <tr>
 <td>2</td>
 <td><strong>멀티레포 → 모노레포</strong></td>
-<td>Presentation / Network / Common 3-Layer 멀티모듈 (Android 3인
-협업)</td>
+<td>Presentation / Network / Common 3-Layer 멀티모듈</td>
 </tr>
 <tr>
 <td>3</td>
 <td><strong>MVVM → MVI</strong></td>
-<td>MVI 적용, Compose·MVI 스터디를 열어 Android 구성원과 함께 학습</td>
+<td>Compose·MVI 스터디를 열어 구성원과 함께 학습하고 코드 컨벤션
+정리</td>
 </tr>
 <tr>
 <td>4</td>
-<td><strong>DataBinding → Compose</strong></td>
-<td>종료 예고를 보고 선제 전환 — 분산된 상태를 ViewModel 중심으로
-통합</td>
+<td><strong>XML → Compose</strong></td>
+<td>신규·개편 화면부터 단계적으로 전환</td>
 </tr>
 </tbody>
 </table>
-<p>함께 넘어가기 위해 Compose/MVI 팀 스터디를 주최하고 코드 컨벤션을
-같이 다듬었습니다.</p>
-<p>아키텍처를 옮기고 나니 다음 병목은 빌드였습니다. 구버전 AGP로 최대
-8분이 걸렸고, 병렬 빌드와 캐시가 모두 꺼져 있어 증분 효과도 거의
-없었습니다. VersionCatalog로 모듈 간 버전 불일치를 없앤 뒤,
-<strong>kapt를 KSP로 전환하면서 Kotlin 2.0으로 올렸습니다.</strong>
-kapt는 어노테이션 처리를 위해 Java 스텁을 먼저 만들어야 해 느리고,
-Kotlin 2.0의 <strong>K2 컴파일러</strong>도 kapt와 함께 쓰면 이전
-컴파일러 방식으로 되돌아가 이점을 얻을 수 없습니다. 두 가지가 맞물려
-있어 한 작업으로 묶었고, 같은 PR에서 AGP·Gradle 최신화, Kotlin DSL 전환,
-병렬 빌드·캐시 활성화까지 처리했습니다.</p>
+<p>아키텍처를 옮기고 나니 다음 병목은 빌드였습니다. 구버전 AGP에 병렬
+빌드와 캐시가 꺼져 있어 최대 8분이 걸렸습니다. VersionCatalog로 모듈 간
+버전을 맞추고, AGP·Gradle 최신화, Hilt의 kapt → KSP 전환과 Kotlin
+2.0(K2) 업그레이드, 병렬 빌드·캐시 활성화로 빌드 시간을 줄였습니다.</p>
 <p><strong>결과</strong><br />
 - Java → Kotlin <strong>28.8% → 99.2%</strong><br />
-- Compose + MVI 전환 후 <strong>동일 유형 작업의 예상 스토리포인트 20%
-감소</strong>(스프린트 작업 티켓 기준)<br />
 - 앱별 레포를 모노레포로 통합 → <strong>3개 앱 단일 구조</strong>
 운영<br />
-- OS 17 회전 디바이스 확장에 <strong>별도 대응 없이 자동
-호환</strong><br />
 - 빌드 <strong>최대 8분 → 3분</strong></p>
-<p>미리 옮겨둔 효과는 나중에 드러났습니다.</p>
 </div><p class="tags">Kotlin<span class="sep"> · </span>Compose<span class="sep"> · </span>MVI<span class="sep"> · </span>Flow<span class="sep"> · </span>멀티모듈<span class="sep"> · </span>모노레포<span class="sep"> · </span>Gradle Kotlin DSL<span class="sep"> · </span>KSP<span class="sep"> · </span>빌드 캐시</p></article><article class="csec" id="c1-4"><p class="cno">04</p><h3>AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</h3><p class="meta">테스트 자동화<span class="sep"> · </span>2025.07 ~ 2026.02<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>기존 자동 생성 스킬이 LINE 커버리지를
 20.6%까지 올려둔 상태였는데, 생성된 테스트가 실패하면 결국 사람이 붙어야
 해서 그 위로 올라가지 못하고 있었습니다.</p>
