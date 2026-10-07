@@ -11,6 +11,6 @@
 
 ## Contact
 
-- ✉️ cherryzp9094@gmail.com
+- ✉️ win9101@gmail.com
 - 🐙 [GitHub](https://github.com/cherryzp9094)
 - 💼 [LinkedIn](https://www.linkedin.com/in/%EC%84%B1%EA%B4%91-%EC%9D%B4-391441236/)
