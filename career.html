@@ -204,10 +204,7 @@ LeakCanary는 이후 팀 빌드 옵션으로 정착</p>
 <tr>
 <td>3</td>
 <td><strong>MVVM → MVI</strong></td>
-<td>MVI를 깊이 이해하고 싶어 하던 팀원과, Now in Android처럼 외부 의존성
-없이 자체 코드로 만들어 보자는 챌린지로 시작 — Orbit 코드를 분석하며
-함께 학습하고 <code>reduceState</code> + <code>postSideEffect</code> 두
-축으로 직접 제작</td>
+<td>MVI 적용, Compose·MVI 스터디를 열어 Android 구성원과 함께 학습</td>
 </tr>
 <tr>
 <td>4</td>
@@ -323,11 +320,11 @@ Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 두고 일정 주기로 승인 여부를 API로 확인하는 폴링 방식</strong>을 먼저
 도입하자고 제안해 구현했습니다.</p>
 <p>화면은 결제 요청 → 진행 중 → 완료 → 환불까지 전 플로우를 Compose +
-자체 MVI로 만들었고, 스타일 태그는 카테고리별 복수 선택이 가능한
-바텀시트로 구현했습니다. 백엔드 API가 나오기 전에는 로컬 JSON 목
-데이터로 통신 케이스를 미리 만들어 개발하고 엣지 케이스를 먼저
-공유했습니다. 외부 결제가 섞이면서 달라지는 매출·포인트 계산은 경우별로
-백엔드와 규칙을 다시 맞췄습니다.</p>
+MVI로 만들었고, 스타일 태그는 카테고리별 복수 선택이 가능한 바텀시트로
+구현했습니다. 백엔드 API가 나오기 전에는 로컬 JSON 목 데이터로 통신
+케이스를 미리 만들어 개발하고 엣지 케이스를 먼저 공유했습니다. 외부
+결제가 섞이면서 달라지는 매출·포인트 계산은 경우별로 백엔드와 규칙을
+다시 맞췄습니다.</p>
 <p><strong>결과</strong><br />
 - 매장결제 · 예약금 · 쿠폰 · 스타일 태그 <strong>배포</strong><br />
 - 매출 ViewModel 단위 테스트는 <strong>자체 테스트 생성 파이프라인으로
@@ -394,10 +391,10 @@ Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 <p class="blk"><span class="lbl lbl-상황">상황</span>고객 목록에 필터·그룹 기능이 없어 매장이
 고객을 나눠 관리하기 불편했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span><strong>B2B 앱에 Compose를 처음
-도입</strong>하고 자체 MVI 프레임워크를 실제 화면에 처음 얹었습니다.
-필터·그룹은 조건 카테고리가 전부 숨김일 때의 노출 정책과, 필터 수정 후
-복귀 시 리프레시 시나리오를 먼저 정의해 프론트·백엔드와 합의했고, 화면
-전환 구조는 iOS와 회의록을 만들어 함께 정리했습니다. 디자인시스템
+도입</strong>하고 MVI를 적용했습니다. 필터·그룹은 조건 카테고리가 전부
+숨김일 때의 노출 정책과, 필터 수정 후 복귀 시 리프레시 시나리오를 먼저
+정의해 프론트·백엔드와 합의했고, 화면 전환 구조는 iOS와 회의록을 만들어
+함께 정리했습니다. 디자인시스템
 컴포넌트(테이블·Chip·TextField·SideModal)를 함께 만들었고 Chip은
 디자이너에게 요청해 신설했습니다. 실시간 검색은 debounce로 불필요한 API
 호출을 줄였고, 드래그앤드롭은 OS 업데이트로 외부 라이브러리가 깨져 직접
@@ -564,7 +561,7 @@ FCM·Analytics·Crashlytics를 도입했습니다. Android와 함께
 <strong>Spring·JPA 기반 백엔드 REST API도 직접
 개발</strong>했습니다.</p>
 </div><p class="tags">Spring<span class="sep"> · </span>JPA<span class="sep"> · </span>LeakCanary<span class="sep"> · </span>FCM</p></article></section>
-<footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-10-04</footer>
+<footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-10-07</footer>
 </main>
 </div>
 <script>
