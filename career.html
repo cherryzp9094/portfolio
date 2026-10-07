@@ -152,13 +152,12 @@ Glance</strong>로 옮겼습니다. Compose 문법으로 작성하지만 실제�
 Compose와 쓸 수 있는 컴포넌트와 스타일이 다릅니다.</p>
 <p>동기화는 WorkManager 주기 작업 + DataStore(Protobuf)로 — JSON보다
 파싱 오버헤드가 적어 위젯처럼 제한된 환경에 맞다고 봤습니다.</p>
-<p>절전 모드는 VOC로 들어온 것이 아니라 작업 중 직접 조사해 위젯
-동기화가 어렵다는 것을 파악한 부분입니다. <strong>진입 브로드캐스트가
-OS·제조사(삼성/LG/샤오미)마다 달라</strong>
-<code>isPowerSaveMode()</code>와
-<code>ACTION_POWER_SAVE_MODE_CHANGED</code>를 조합해 감지하고,
-<strong>민감 권한을 요청하는 대신 해제를 유도하는 UI</strong>로
-넘겼습니다.</p>
+<p>절전 모드는 VOC로 들어온 것이 아니라 작업 중 직접 조사해 파악한
+부분입니다. 절전 모드에서는 백그라운드 작업이 제한돼 위젯이 데이터를
+받아 오지 못했습니다. 배터리 최적화 예외 같은 <strong>민감 권한으로
+강제할 수도 있었지만 스토어 심사에서 리젝 사유가 될 수 있어</strong>,
+동기화할 때 절전 모드를 확인하고 <strong>해제를 안내하는 UI</strong>로
+풀었습니다.</p>
 <p>텍스트는 앱 실행 시 해상도·글자 크기를 저장해 렌더링 때 조정했습니다.
 이 프로젝트에서 <strong>LeakCanary를 도입</strong>해 Crashlytics·ANR이
 못 잡던 메모리 누수를 잡기 시작했고, 이후 실제 누수 수정으로
