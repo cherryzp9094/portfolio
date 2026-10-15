@@ -4,132 +4,189 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#fbfcfc">
 <title>경력기술서 · 이성광</title>
 <meta name="description" content="7년차 Android 개발자 이성광의 경력기술서. 프로젝트별 상황 · 해결 · 결과 · 회고.">
-<meta property="og:title" content="경력기술서 · 이성광">
-<meta property="og:description" content="7년차 Android 개발자 이성광의 경력기술서. 프로젝트별 상황 · 해결 · 결과 · 회고.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23111%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22>이</text></svg>">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<style>:root{color-scheme:light;--ink:#111;--ink2:#3d3d3d;--ink3:#767676;--rule:#e2e2e2;--rule2:#111;--link:#0b57d0;--bg:#fff;--wash:#f6f6f6}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
-a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
-strong{font-weight:650}.sep{color:var(--ink3)}
-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:var(--wash);padding:.1em .4em;border-radius:5px}
-
-.page{max-width:1120px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:72px}
-
-/* 왼쪽 고정 영역 */
-.side{min-width:0;position:sticky;top:0;align-self:start;height:100vh;padding:56px 0 40px;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:none}.side::-webkit-scrollbar{display:none}
-.side>*{flex-shrink:0}
-.name{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1.2}.name:hover{text-decoration:none}
-.role{margin:8px 0 0;color:var(--ink3);font-size:.9rem;line-height:1.55}
-.tabs{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;border:1px solid #cfcfcf;border-radius:10px;overflow:hidden}
-.tabs a{text-align:center;padding:9px 0;font-size:.88rem;font-weight:600;color:var(--ink2)}.tabs a:hover{text-decoration:none;background:var(--wash)}.tabs a.on{background:var(--ink);color:#fff}
-#toc{margin-top:22px;display:flex;flex-direction:column;border-top:1px solid var(--rule2)}
-#toc a{color:var(--ink2);padding:10px 0;border-bottom:1px solid var(--rule);font-size:.95rem;display:flex;justify-content:space-between;align-items:baseline}
-#toc a:hover{text-decoration:none;color:var(--ink)}#toc a.on{color:var(--ink);font-weight:700}#toc a.on::before{content:"";position:absolute;margin-left:-14px;margin-top:.62em;width:5px;height:5px;background:var(--ink)}
-#toc i{font-style:normal;color:var(--ink3);font-size:.76rem;font-variant-numeric:tabular-nums;margin-right:9px}
-#toc a span{display:flex;align-items:baseline}
-.contact{list-style:none;padding:0;margin:auto 0 0;padding-top:28px;font-size:.86rem;line-height:1.9}.contact a{color:var(--ink2)}
-
-/* 본문 */
-main{padding:56px 0 0;max-width:780px;min-width:0}
-section{padding-bottom:88px}
-h1{margin:0 0 14px;font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.22;letter-spacing:-.035em;font-weight:800}
-.subline{margin:0 0 30px;font-size:1.05rem;color:var(--ink3);font-weight:500}
-.about p{margin:0 0 .95em;color:var(--ink2);font-size:1.03rem}.about p:first-child{color:var(--ink);font-size:1.12rem}
-h2{margin:0 0 6px;padding-top:20px;border-top:2px solid var(--rule2);font-size:1.45rem;letter-spacing:-.025em;font-weight:800}
-.lead{margin:0 0 8px;color:var(--ink3);font-size:.92rem;line-height:1.65}.lead a{color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
-h3{margin:0;font-size:1.22rem;line-height:1.45;letter-spacing:-.02em;font-weight:750}
-h4{margin:30px 0 4px;font-size:.98rem;font-weight:750}h4 small{font-weight:400;color:var(--ink3);margin-left:4px;font-size:.86rem}
-.meta{margin:6px 0 0;color:var(--ink3);font-size:.86rem;line-height:1.6}
-.text{margin:14px 0 0;color:var(--ink2);font-size:.98rem}
-
-/* 프로젝트 — 전부 같은 폭 한 줄 */
-.proj{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0;padding:34px 0;border-bottom:1px solid var(--rule)}
-.proj:first-of-type{padding-top:28px}
-.no{font-variant-numeric:tabular-nums;font-size:.86rem;font-weight:700;color:var(--ink3);padding-top:5px;letter-spacing:.02em}
-.result{margin-top:16px;padding:2px 0 2px 16px;border-left:3px solid var(--rule2);display:grid;grid-template-columns:auto 1fr;gap:14px}
-.result>span{font-size:.8rem;font-weight:750;padding-top:3px;color:var(--ink)}
-.result ul{margin:0;padding:0;list-style:none}.result li{font-size:.96rem;font-weight:600;line-height:1.6;color:var(--ink)}
-.tags{margin:14px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.76rem;color:var(--ink3);line-height:1.7}
-.cbody{margin-top:18px;font-size:.98rem;color:var(--ink2);line-height:1.85}
-.cbody p{margin:0 0 .9em}.cbody p:last-child{margin-bottom:0}.cbody strong{color:var(--ink)}.cbody ul{margin:0 0 .9em;padding-left:1.15em}
-.cbody .blk{margin-top:1.5em}.cbody .blk:first-child{margin-top:0}.cbody .blk.only{margin-bottom:.45em}
-.lbl{display:inline-block;margin-right:10px;padding:1px 9px;border-radius:6px;font-size:.76rem;font-weight:700;line-height:1.7;vertical-align:1px;background:#e9e9ec;color:#333}
-.lbl-결과{background:#111;color:#fff}.lbl-회고{background:#fff;border:1px solid #cfcfcf;color:#555}
-.cbody pre{background:#fff;border:1px solid #e6e6e9;border-radius:10px;padding:14px 16px;overflow-x:auto;font-size:.78rem;line-height:1.55;margin:0 0 .9em}
-.cbody table{width:100%;border-collapse:collapse;font-size:.87rem;margin:0 0 1em;display:block;overflow-x:auto}.cbody th,.cbody td{border-bottom:1px solid #e6e6e9;padding:9px 12px 9px 0;text-align:left;vertical-align:top}.cbody th{color:var(--ink3);font-weight:600;white-space:nowrap}
-.cbody blockquote{margin:0 0 .9em;color:var(--ink3);font-size:.88rem}.cbody blockquote p{margin:0}
-
-h5{margin:44px 0 0;font-size:.82rem;font-weight:700;color:var(--ink3);letter-spacing:.02em}
-h2+h5{margin-top:18px}
-.teamline{margin:0 0 1.4em!important;padding-bottom:.9em;border-bottom:1px solid #e6e6e9;font-size:.85rem;color:var(--ink3)}
-.grp{padding-top:22px}.grp+.grp{margin-top:6px}.grp-name{margin:0;font-size:.95rem;font-weight:750;color:var(--ink)}.grp .mini{padding:14px 0 18px}.grp .mini h3{font-size:1rem}
-.minis{margin-top:6px}.mini{padding:22px 0;border-bottom:1px solid var(--rule)}.mini h3{font-size:1.04rem}.mini .text{margin-top:8px;font-size:.95rem}.mini .meta:empty{display:none}
-
-/* 경력기술서 페이지 */
-#toc a.toc-co{font-weight:750;color:var(--ink);margin-top:10px;border-top:1px solid var(--rule2)}#toc a.toc-co:first-child{margin-top:0}
-#toc a.toc-sub{padding-left:0}
-.csub{padding-top:40px}.csub .ch3{margin:0 0 8px;font-size:1.25rem;font-weight:800}
-h5 small{font-weight:500;color:var(--ink3)}
-
-.about-note{margin:0;color:var(--ink3);font-size:.95rem}
-.csec{padding:40px 0 44px;border-bottom:1px solid var(--rule);scroll-margin-top:24px}
-.cno{margin:0 0 6px;font-size:.86rem;font-weight:700;color:var(--ink3);font-variant-numeric:tabular-nums}
-.csec h3{font-size:1.4rem}
-.csec .teamline{margin:14px 0 0!important;padding:0;border:0}
-.cbody .blk{margin-top:1.7em}.cbody>.blk:first-child{margin-top:0}
-.csec .tags{margin-top:20px}
-.back{display:inline-block;margin-top:18px;font-size:.85rem;color:var(--ink3)}.back:hover{color:var(--link)}
-.ch3{margin:40px 0 0;font-size:1.2rem}.ch4{margin:36px 0 0;font-size:1.08rem;font-weight:750}.tailbody>.ch3:first-child,.tailbody>.ch4:first-child{margin-top:8px}
-.tailbody .teamline{margin:10px 0 0!important;padding:0;border:0}.tailbody .meta+p,.tailbody .teamline+p{margin-top:14px}
-.tailbody ul{padding-left:1.15em}.tailbody li{margin-bottom:.6em}
-
-/* 경력 */
-.job{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding:30px 0;border-bottom:1px solid var(--rule)}
-.when{color:var(--ink3);font-size:.88rem;font-variant-numeric:tabular-nums;padding-top:5px}
-.list{list-style:none;margin:10px 0 0;padding:0}.list li{padding:11px 0;border-top:1px solid var(--rule);font-size:.94rem;color:var(--ink2);line-height:1.7}
-.list li strong{color:var(--ink);display:block;margin-bottom:1px}
-.list.plain{margin-top:18px}.list.plain li:first-child{border-top:0;padding-top:0}.list.plain li strong{display:inline}.list.dim li{color:var(--ink3)}
-
-/* 기술 */
-.skills{width:100%;border-collapse:collapse;margin-top:18px}.skills th,.skills td{text-align:left;vertical-align:top;padding:14px 0;border-bottom:1px solid var(--rule);font-size:.94rem}
-.skills th{width:150px;font-weight:700;padding-right:16px;white-space:nowrap}.skills td{color:var(--ink2)}
-
-footer{padding:24px 0 56px;border-top:1px solid var(--rule);color:var(--ink3);font-size:.8rem}
-
-@media (max-width:900px){
- .page{grid-template-columns:minmax(0,1fr);gap:0;padding:0 20px}
- .side{position:static;height:auto;padding:32px 0 0;display:block}
- #toc{flex-direction:row;flex-wrap:wrap;gap:0 18px;margin-top:20px;border-top:1px solid var(--rule2);border-bottom:1px solid var(--rule)}
- #toc a{border-bottom:0;padding:10px 0;font-size:.9rem;gap:4px}#toc a.on::before{display:none}
- .contact{margin:14px 0 0;display:flex;flex-wrap:wrap;gap:0 16px}
- main{padding-top:36px}section{padding-bottom:60px}
- .proj{grid-template-columns:1fr}.no{padding:0 0 6px}
- .job{grid-template-columns:1fr;gap:4px}.skills th{width:auto;display:block;border-bottom:0;padding-bottom:0}.skills td{display:block;padding-top:4px}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--bg:#fbfcfc;--paper:#ffffff;--ink:#14201f;--ink2:#3c4a49;--mute:#5f6c6b;--line:#dde3e2;--acc:#0f6b5f;--acc-soft:#e3f1ee;--code:#f1f5f4;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:anywhere}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:3px}
+code,.when{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+h1,h2,h3,h4{text-wrap:balance;letter-spacing:-.02em}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;z-index:20;border-radius:4px}.skip:focus{left:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 상단 바 */
+.bar{position:sticky;top:0;z-index:10;background:rgba(251,252,252,.94);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bar .me{font-weight:700;color:var(--ink);letter-spacing:-.02em;opacity:0;visibility:hidden;transform:translateY(4px)}
+.bar .me small{font-weight:400;color:var(--mute);margin-left:6px}
+.bar.scrolled .me{opacity:1;visibility:visible;transform:none}
+@media (prefers-reduced-motion:no-preference){.bar .me{transition:opacity .2s,transform .2s,visibility .2s}}
+.bar nav{display:flex;gap:4px}
+.bar nav a{font-size:.88rem;color:var(--ink2);padding:6px 10px;border-radius:6px}
+.bar nav a[aria-current="page"]{background:var(--ink);color:#fff;text-decoration:none}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 64px}
+/* 머리 */
+.hd{display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:start;border-bottom:2px solid var(--ink);padding-bottom:18px}
+main h1{font-size:clamp(2rem,6vw,2.8rem);margin:0;line-height:1.1}
+.hd .who{margin:0;font-size:1.5rem;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.lede{margin:28px 0 0}
+.lede h1{font-size:clamp(1.9rem,5.4vw,2.6rem);line-height:1.2}
+.lede .subline{margin:8px 0 0;color:var(--mute);font-size:1.02rem}
+.hd .role{color:var(--ink2);margin-top:6px}
+.hd .role .en{font-size:.9rem;color:var(--mute);margin-left:4px}
+.hd .contact{list-style:none;margin:0;padding:0;font-size:.84rem;text-align:right;line-height:1.8;color:var(--ink2)}
+.intro{display:grid;gap:10px;max-width:68ch;margin:22px 0 4px;color:var(--ink2)}
+.intro p{margin:0}.intro p:first-child{color:var(--ink);font-size:1.07rem}
+/* 섹션 제목 */
+.sec{font-size:1.3rem;font-weight:700;color:var(--ink);margin:44px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+/* 회사 블록 */
+.co{padding:32px 0 36px;border-top:1px solid var(--line)}
+.co:first-of-type{border-top:0}
+.when{font-size:.8rem;color:var(--mute);padding-top:5px;font-variant-numeric:tabular-nums}
+.cohd h3{font-size:1.25rem;margin:6px 0 0;line-height:1.3}
+.co h3 small{font-weight:400;color:var(--ink2);font-size:.9rem;margin-left:6px}
+.svc{margin:4px 0 0;color:var(--ink2);font-size:.92rem}
+.svc p{margin:2px 0}
+.rel{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:18px}
+.rel h4{margin:0;font-size:1rem}
+.rel .meta{display:block;font-size:.8125rem;color:var(--mute);margin-top:1px}
+.rel .body{margin:5px 0 0;color:var(--ink2);font-size:.93rem}
+.diff{margin-top:8px;font-size:.88rem;line-height:1.75;background:var(--code);border-left:3px solid var(--acc);padding:7px 11px;color:var(--ink);border-radius:0 4px 4px 0}
+.diff span,.res li{display:block;position:relative;padding-left:16px}
+.diff span::before,.res li::before{content:"•";position:absolute;left:2px;top:0;color:var(--acc);font-weight:700}
+.lead{margin-top:12px;font-size:.9rem;color:var(--ink2)}
+/* 기술·활동 */
+.skills{display:grid;grid-template-columns:168px minmax(0,1fr);gap:10px 24px;margin:16px 0 0;font-size:.92rem}
+.skills dt{font-size:.84rem;font-weight:600;color:var(--ink)}
+.skills dd{margin:0}
+.misc{list-style:none;padding:0;margin:12px 0 0}
+.misc li{padding:9px 0;border-top:1px solid var(--line);font-size:.92rem;color:var(--ink2)}
+.misc li:first-child{border-top:0}
+.misc.dim li{color:var(--mute)}
+/* 경력기술서 */
+.chead p{margin:8px 0 0;color:var(--ink2);max-width:68ch}
+.toc{margin:22px 0 0;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+.toc summary{cursor:pointer;padding:10px 14px;font-weight:600;font-size:.92rem}
+.toc ul{margin:0;padding:4px 14px 14px;font-size:.88rem;columns:2;column-gap:28px;list-style:none}
+.toc li{break-inside:avoid;padding:2px 0}
+.toc .co-l{font-weight:700;padding-top:8px}.toc .co-l a{color:var(--ink)}
+.csec{padding:22px 0;border-top:1px solid var(--line)}
+.csec h3{margin:0;font-size:1.12rem}
+.csec .meta,.cbody p.meta{font-size:.8125rem;color:var(--mute);margin:3px 0 0}
+.team,.cbody p.team{font-size:.86rem;color:var(--ink2);margin:6px 0 0}
+.cbody p.team{margin:4px 0 12px}
+.cbody ul.tags{padding-left:0;margin:10px 0 0}
+.cbody{margin-top:10px;color:var(--ink2);font-size:.94rem}
+.cbody p{margin:0 0 10px}.cbody ul,.cbody ol{margin:0 0 10px;padding-left:20px}.cbody li{margin:3px 0}
+.cbody table{border-collapse:collapse;font-size:.86rem;margin:6px 0 12px;width:100%}
+.cbody th,.cbody td{border-top:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.cbody pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto;font-size:.875rem;line-height:1.6}
+.cbody code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.84em}
+.cbody pre code{background:none;padding:0;font-size:inherit}
+.lbl{display:inline-block;font-size:.74rem;font-weight:600;letter-spacing:.04em;color:var(--acc);background:var(--acc-soft);padding:1px 7px;border-radius:4px;margin-right:8px;vertical-align:1px}
+.lbl-결과{background:var(--acc);color:#fff}
+.tblwrap{overflow-x:auto}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.tags li{font-size:.78rem;color:var(--ink2);border:1px solid var(--line);border-radius:4px;padding:2px 7px}
+.sub{padding:22px 0;border-top:1px solid var(--line)}
+.sub h3{margin:0 0 8px;font-size:1.05rem}
+.sub h4{margin:16px 0 4px;font-size:.98rem;color:var(--ink)}
+/* 경력기술서 회사 머리: 한 칸, 회사 > 프로젝트 위계 */
+.cco{margin-top:64px;padding-top:28px;border-top:2px solid var(--ink)}
+.chead+.cco{margin-top:40px}
+.cohd .when{display:block;font-size:.8rem;color:var(--mute);padding:0}
+.cohd h2{font-size:1.5rem;margin:6px 0 0;line-height:1.3}
+.cohd .role{margin:4px 0 0;color:var(--ink2);font-size:.95rem}
+.cohd .svc{margin:10px 0 0;color:var(--ink2);font-size:.92rem;max-width:68ch}
+.co .cohd .svc{max-width:none}
+main p,main li{text-wrap:pretty}
+.cco .csec,.cco .sub{padding:32px 0;border-top:1px solid var(--line)}
+.cohd+.csec,.cohd+.sub{margin-top:24px}
+.csec h3{font-size:1.15rem}
+.cbody h4.ch4{margin:30px 0 2px;font-size:1.02rem;color:var(--ink)}
+.cbody h4.ch4:first-child{margin-top:4px}
+/* 결과: 라벨 + 내용(여러 줄이면 목록)을 한 모양으로 */
+.res{margin:4px 0 12px;background:var(--code);border-left:3px solid var(--acc);border-radius:0 4px 4px 0;padding:8px 12px}
+.res .lbl{margin:0 0 4px}
+.res p{margin:4px 0 0;color:var(--ink)}
+.res ul{margin:4px 0 0;padding:0;list-style:none;color:var(--ink)}
+.res li{margin:2px 0}
+/* 본문 속 링크는 색만으로 구분되지 않게 밑줄 */
+.intro a,.svc a,.cbody a,.chead p a,.misc a,.lead a{text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px}
+/* 이력서 프로젝트 제목 → 경력기술서 해당 항목 */
+.plink{color:inherit}.plink:hover{color:var(--acc)}
+.plink::after{content:"→"/"";color:var(--acc);font-weight:400;margin-left:6px;font-size:.9em}
+[tabindex="-1"]:focus:not(:focus-visible){outline:none}
+[tabindex="-1"]:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:4px}
+footer{margin-top:48px;padding-top:14px;border-top:1px solid var(--line);font-size:.8rem;color:var(--mute)}
+.pdf-only{display:none}
+/* 모바일 */
+@media (max-width:680px){
+  body{font-size:15.5px}
+  .hd{grid-template-columns:1fr}.hd .contact{text-align:left;display:flex;flex-wrap:wrap;gap:2px 0;line-height:1.6}.hd .contact li+li::before{content:"·";color:var(--mute);margin:0 8px}
+  .co,.skills{grid-template-columns:1fr}
+  .when{padding-top:0}
+  .toc ul{columns:1}
+  .chead+.cco{margin-top:28px}.cco{margin-top:44px;padding-top:20px}
+  .cohd+.csec,.cohd+.sub{margin-top:4px}.cco .csec,.cco .sub{padding:24px 0}
+  .bar .me{font-size:.95rem}.bar .me small{display:none}
 }
-@media print{.side{position:static;height:auto}#toc,.tabs,.back{display:none}.page{display:block}}
+/* 인쇄: A4 + 경력기술서 링크 */
+@page{size:A4;margin:12mm 13mm}
+@media print{
+  html{font-size:14.5px}
+  body{background:#fff;font-size:15px}
+  .tail{display:none!important}
+  .plink::after{content:none}
+  .bar,.skip,.toc{display:none!important}
+  .wrap{padding:0;max-width:none}
+  .pdf-only{display:block;font-size:.85rem;margin-top:6px}
+  .sec{margin-top:20px}
+  h2,h3,h4{break-after:avoid}
+  p,li{orphans:3;widows:3}
+  .res,.diff,.cohd{break-inside:avoid}
+  .cohd{break-after:avoid}
+  a{color:var(--ink)}
+  footer{display:none}
+}
+
+/* 경력기술서 목차. 본문 위치는 두 페이지가 같아야 하므로(10-15 탭 이동 시 흔들림),
+   목차는 본문 밖 왼쪽 여백에만 띄운다. 여백이 모자라면 상단 바 "목차" 버튼으로. */
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list a{display:block;padding:4px 10px;border-left:2px solid var(--line);color:var(--ink2);font-size:.86rem;line-height:1.45}
+.toc-list a:hover{color:var(--ink);text-decoration:none;border-left-color:var(--mute)}
+.toc-list .co-l a{border-left-color:transparent;font-weight:700;color:var(--ink);padding:14px 0 4px;font-size:.9rem}
+.toc-list li:first-child.co-l a{padding-top:0}
+.toc-list a.on{border-left-color:var(--acc);color:var(--acc);font-weight:600;background:var(--acc-soft)}
+.toc-list .co-l a.on{background:none;border-left-color:transparent;color:var(--acc)}
+.bar .right{display:flex;align-items:center;gap:8px}
+.tocbtn{font:inherit;font-size:.88rem;border:1px solid var(--line);background:var(--paper);border-radius:6px;padding:5px 10px;color:var(--ink);cursor:pointer;min-height:32px}
+.tocbtn[aria-expanded="true"]{background:var(--acc-soft);border-color:var(--acc);color:var(--acc)}
+.toc-panel{position:absolute;top:100%;left:0;right:0;max-height:calc(100vh - 64px);overflow:auto;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(20,32,31,.10);padding:14px 16px 20px}
+.toc-panel .toc-list{max-width:848px;margin:0 auto}
+.side-toc{display:none}
+@media (min-width:1480px){
+  .side-toc{display:block;position:fixed;top:57px;left:calc(50% - 440px - 256px);width:216px;max-height:calc(100vh - 57px);overflow:auto;padding:30px 4px 24px 0}
+  .side-toc .ttl{font-size:.76rem;font-weight:700;color:var(--mute);letter-spacing:.06em;margin:0 0 10px}
+  .tocbtn,.toc-panel{display:none!important}
+}
+/* 페이지 사이 이동을 부드럽게(지원 브라우저만). 상단 바는 그대로 두고 본문만 바뀐다 */
+@media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}.bar{view-transition-name:bar}}
+@media print{.side-toc,.tocbtn,.toc-panel{display:none!important}}
 </style>
 </head>
-<body>
-<div class="page">
-<aside class="side">
-  <a class="name" href="index.html">이성광</a>
-  <p class="role">Android Developer<br>SeongKwang Lee</p>
-  <div class="tabs"><a href="index.html" class="">이력서</a><a href="career.html" class="on">경력기술서</a></div>
-  <nav id="toc"><a href="#co1" class="toc-co">(주) 헤렌</a><a href="#c1-1"><span><i>01</i>데이터 암호화 마이그레이션</span></a><a href="#c1-2"><span><i>02</i>Compose 위젯 리뉴얼</span></a><a href="#c1-3"><span><i>03</i>레거시 아키텍처 전환</span></a><a href="#c1-4"><span><i>04</i>테스트 자동화</span></a><a href="#c1-5"><span><i>05</i>사내 AI 봇 운영</span></a><a href="#c1-6"><span><i>06</i>통합 회원가입</span></a><a href="#cmore" class="toc-sub">그 밖의 주요 프로젝트</a><a href="#clead" class="toc-sub">네이티브 팀장</a><a href="#cetc" class="toc-sub">그 밖의 작업</a><a href="#co2" class="toc-co">(주) 대교</a><a href="#c2-1"><span><i>01</i>S-Pen 필기 입력과 음성 인식 통합</span></a><a href="#c2-2"><span><i>02</i>학습 결과 시각화와 앱 안정성 관리</span></a><a href="#co3" class="toc-co">메디팔</a><a href="#c3-1"><span><i>01</i>WebSocket 기반 실시간 채팅 구현</span></a><a href="#co4" class="toc-co">(주) 씨커스블록체인</a><a href="#c4-1"><span><i>01</i>Web3j 기반 이더리움 네트워크 연동</span></a><a href="#c4-2"><span><i>02</i>인증 연동과 품질 관리, 백엔드 REST API 개발</span></a></nav>
-  <ul class="contact">
-    <li><a href="mailto:win9101@gmail.com">win9101@gmail.com</a></li>
-    <li><a href="https://github.com/cherryzp9094" target="_blank" rel="noopener">GitHub ↗</a></li>
-    <li><a href="https://www.linkedin.com/in/seongkwang-lee/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-  </ul>
-</aside>
-<main id="top">
-<section id="ctop"><h1>경력기술서</h1><p class="about-note">프로젝트마다 상황, 해결, 결과, 회고 순서로 적었습니다. 요약은 <a href="index.html">이력서</a>에 있습니다.</p></section><section id="co1"><h2>(주) 헤렌</h2><p class="subline">Android Developer → 네이티브 팀장<span class="sep"> · </span>2021.11 ~ 2026.05</p><p class="text"><strong><a href="https://play.google.com/store/apps/details?id=com.gongnailshop.herren_dell1.gongnailshop" target="_blank" rel="noopener">공비서 원장님</a></strong> — 뷰티 B2B SaaS CRM · Google Play <strong>10만+ 다운로드</strong> · 평점 4.2 (리뷰 662)</p><article class="csec" id="c1-1"><p class="cno">01</p><h3>Keystore 기반 로그인 정보 암호화</h3><p class="meta">데이터 암호화 마이그레이션<span class="sep"> · </span>2025.08<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span><strong>로그인 비밀번호가 기기에 평문으로
+<body class="has-side">
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="bar"><div class="in"><a class="me" href="index.html">이성광<small>Android Developer</small></a><div class="right"><button type="button" class="tocbtn" aria-expanded="false" aria-controls="tocp">목차</button><nav aria-label="문서"><a href="index.html">이력서</a><a href="career.html" aria-current="page">경력기술서</a></nav></div></div><div id="tocp" class="toc-panel" hidden><nav aria-label="목차"><ul class="toc-list"><li class="co-l"><a href="#co1">(주) 헤렌</a></li><li><a href="#c1-1">Keystore 기반 로그인 정보 암호화</a></li><li><a href="#c1-2">위젯 Glance 재구축</a></li><li><a href="#c1-3">레거시 아키텍처 Kotlin·Compose 전환</a></li><li><a href="#c1-4">AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</a></li><li><a href="#c1-5">상담봇 RAG 적용·최적화</a></li><li><a href="#c1-6">원장·직원 회원가입 통합과 배포 체계 개선</a></li><li><a href="#cmore">그 밖의 주요 프로젝트</a></li><li><a href="#clead">네이티브 팀장</a></li><li><a href="#cetc">그 밖의 작업</a></li><li class="co-l"><a href="#co2">(주) 대교</a></li><li><a href="#c2-1">S-Pen 필기 입력과 음성 인식 통합</a></li><li><a href="#c2-2">학습 결과 시각화와 앱 안정성 관리</a></li><li class="co-l"><a href="#co3">메디팔</a></li><li><a href="#c3-1">WebSocket 기반 실시간 채팅 구현</a></li><li class="co-l"><a href="#co4">(주) 씨커스블록체인</a></li><li><a href="#c4-1">Web3j 기반 이더리움 네트워크 연동</a></li><li><a href="#c4-2">인증 연동과 품질 관리, 백엔드 REST API 개발</a></li></ul></nav></div></header>
+<nav class="side-toc" aria-label="목차"><p class="ttl">목차</p><ul class="toc-list"><li class="co-l"><a href="#co1">(주) 헤렌</a></li><li><a href="#c1-1">Keystore 기반 로그인 정보 암호화</a></li><li><a href="#c1-2">위젯 Glance 재구축</a></li><li><a href="#c1-3">레거시 아키텍처 Kotlin·Compose 전환</a></li><li><a href="#c1-4">AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</a></li><li><a href="#c1-5">상담봇 RAG 적용·최적화</a></li><li><a href="#c1-6">원장·직원 회원가입 통합과 배포 체계 개선</a></li><li><a href="#cmore">그 밖의 주요 프로젝트</a></li><li><a href="#clead">네이티브 팀장</a></li><li><a href="#cetc">그 밖의 작업</a></li><li class="co-l"><a href="#co2">(주) 대교</a></li><li><a href="#c2-1">S-Pen 필기 입력과 음성 인식 통합</a></li><li><a href="#c2-2">학습 결과 시각화와 앱 안정성 관리</a></li><li class="co-l"><a href="#co3">메디팔</a></li><li><a href="#c3-1">WebSocket 기반 실시간 채팅 구현</a></li><li class="co-l"><a href="#co4">(주) 씨커스블록체인</a></li><li><a href="#c4-1">Web3j 기반 이더리움 네트워크 연동</a></li><li><a href="#c4-2">인증 연동과 품질 관리, 백엔드 REST API 개발</a></li></ul></nav><main id="main" class="wrap">
+<div class="chead"><h1>경력기술서</h1><p>프로젝트마다 상황, 해결, 결과, 회고 순서로 적었습니다. 요약은 <a href="index.html">이력서</a>에 있습니다.</p></div>
+<section class="cco" id="co1" aria-labelledby="coh1"><header class="cohd"><span class="when">2021.11 ~ 2026.05</span><h2 id="coh1">(주) 헤렌</h2><p class="role">Android Developer → 네이티브 팀장</p><p class="svc"><strong><a href="https://play.google.com/store/apps/details?id=com.gongnailshop.herren_dell1.gongnailshop" target="_blank" rel="noopener">공비서 원장님</a></strong> — 뷰티 B2B SaaS CRM · Google Play <strong>10만+ 다운로드</strong> · 평점 4.2 (리뷰 662)</p></header><article class="csec" id="c1-1"><h3>Keystore 기반 로그인 정보 암호화</h3><p class="meta">데이터 암호화 마이그레이션<span class="sep"> · </span>2025.08<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span><strong>로그인 비밀번호가 기기에 평문으로
 저장되는 문제</strong>를 직접 찾아 주도적으로 개선했습니다.
 SharedPreferences를 DataStore로 옮기려 했지만 <strong>DataStore도 기본
 암호화를 제공하지 않아</strong> 저장소 자체에 암호화를 넣어야
@@ -141,9 +198,8 @@ SharedPreferences를 DataStore로 옮기려 했지만 <strong>DataStore도 기�
 화면 7곳(로그인, 회원가입, 스플래시, 회원정보 수정 등)을 이 저장소로
 직접 옮겼고, 이미 배포된 앱의 평문 데이터는 <strong>앱 시작 시 암호화
 저장소로 옮긴 뒤 삭제</strong>해 강제 업데이트 없이 전환했습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>강제 업데이트 없이 전환 · <strong>로그인 실패
-0건</strong></p>
-</div><p class="tags">Android Keystore<span class="sep"> · </span>AES-GCM<span class="sep"> · </span>DataStore</p></article><article class="csec" id="c1-2"><p class="cno">02</p><h3>위젯 Glance 재구축</h3><p class="meta">Compose 위젯 리뉴얼<span class="sep"> · </span>2024.11 ~ 12<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>RemoteViews 기반 레거시 위젯이 유지보수가
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>강제 업데이트 없이 전환</li><li><strong>로그인 실패 0건</strong></li></ul></div>
+</div><ul class="tags" translate="no"><li>Android Keystore</li><li>AES-GCM</li><li>DataStore</li></ul></article><article class="csec" id="c1-2"><h3>위젯 Glance 재구축</h3><p class="meta">Compose 위젯 리뉴얼<span class="sep"> · </span>2024.11 ~ 12<span class="sep"> · </span>기여도 100%</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>RemoteViews 기반 레거시 위젯이 유지보수가
 어려웠고, 앱과 위젯 사이 데이터가 어긋나 값이 오래된 채로 남는다는 VOC,
 고해상도 기기에서 텍스트가 안 읽힌다는 VOC가 들어왔습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>RemoteViews를 <strong>Jetpack
@@ -164,28 +220,22 @@ Glance 기본 저장소(Preferences)는 문자열·숫자 같은 단일 값만 �
 이 프로젝트에서 <strong>LeakCanary를 도입</strong>해 Crashlytics·ANR이
 못 잡던 메모리 누수를 잡기 시작했고, 이후 실제 누수 수정으로
 이어졌습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>데이터 불일치·텍스트 VOC 해소 · 절전 모드
-해제 안내 UI 제공 · 운영 기간 위젯 관련 크래시 0건(Crashlytics) ·
-LeakCanary는 이후 팀 빌드 옵션으로 정착</p>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>데이터 불일치·텍스트 VOC 해소</li><li>절전 모드 해제 안내 UI 제공</li><li>운영 기간 위젯 관련 크래시 0건(Crashlytics)</li><li>LeakCanary는 이후 팀 빌드 옵션으로 정착</li></ul></div>
 <p class="blk"><span class="lbl lbl-회고">회고</span>텍스트 크기 조정은 앱을 한 번 실행해야
 반영됩니다. 위젯 단독으로 갱신할 방법을 못 찾았고, 그 한계는 그대로
 남았습니다.</p>
-</div><p class="tags">Glance<span class="sep"> · </span>WorkManager<span class="sep"> · </span>DataStore(Protobuf)<span class="sep"> · </span>LeakCanary</p></article><article class="csec" id="c1-3"><p class="cno">03</p><h3>레거시 아키텍처 Kotlin·Compose 전환</h3><p class="meta">레거시 아키텍처 전환<span class="sep"> · </span>2021.11 ~ 2026.05 · 재직 기간 동안 단계적으로 진행<span class="sep"> · </span>기여도 30%</p><p class="teamline">팀 구성 — Android 3</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>Java 71%의 MVC + AsyncTask 레거시. 앱마다
+</div><ul class="tags" translate="no"><li>Glance</li><li>WorkManager</li><li>DataStore(Protobuf)</li><li>LeakCanary</li></ul></article><article class="csec" id="c1-3"><h3>레거시 아키텍처 Kotlin·Compose 전환</h3><p class="meta">레거시 아키텍처 전환<span class="sep"> · </span>2021.11 ~ 2026.05 · 재직 기간 동안 단계적으로 진행<span class="sep"> · </span>기여도 30%</p><p class="team">팀 구성 · Android 3</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>Java 71%의 MVC + AsyncTask 레거시. 앱마다
 레포가 나뉘어 있어 공통 코드가 중복됐습니다. 서비스는 계속 굴러가야
 했으므로 한 번에 갈아엎는 선택지는 없었습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>서비스를 멈추지 않으려고 4단계로 나눠 순차
 전환했습니다.</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
+<div class="tblwrap"><table>
+<colgroup><col style="width:3.5rem" /><col style="width:30%" /><col /></colgroup>
 <thead>
 <tr>
-<th>단계</th>
-<th>전환</th>
-<th>판단</th>
+<th scope="col">단계</th>
+<th scope="col">전환</th>
+<th scope="col">판단</th>
 </tr>
 </thead>
 <tbody>
@@ -211,17 +261,14 @@ LeakCanary는 이후 팀 빌드 옵션으로 정착</p>
 <td>디자인 시스템부터 만들고, 신규·개편 화면부터 단계적으로 전환</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>아키텍처를 옮기고 나니 다음 병목은 빌드였습니다. 구버전 AGP에 병렬
 빌드와 캐시가 꺼져 있어 최대 8분이 걸렸습니다. VersionCatalog로 모듈 간
 버전을 맞추고, AGP·Gradle 최신화, Hilt의 kapt → KSP 전환과 Kotlin
 2.0(K2) 업그레이드, 병렬 빌드·캐시 활성화로 빌드 시간을 줄였습니다.</p>
-<p><strong>결과</strong><br />
-- Java → Kotlin <strong>28.8% → 99.2%</strong><br />
-- 앱별 레포를 모노레포로 통합 → <strong>3개 앱 단일 구조</strong>
-운영<br />
-- 빌드 <strong>최대 8분 → 3분</strong></p>
-</div><p class="tags">Kotlin<span class="sep"> · </span>Compose<span class="sep"> · </span>MVI<span class="sep"> · </span>Flow<span class="sep"> · </span>멀티모듈<span class="sep"> · </span>모노레포<span class="sep"> · </span>Gradle Kotlin DSL<span class="sep"> · </span>KSP<span class="sep"> · </span>빌드 캐시</p></article><article class="csec" id="c1-4"><p class="cno">04</p><h3>AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</h3><p class="meta">테스트 자동화<span class="sep"> · </span>2025.07 ~ 2026.02<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>기존 자동 생성 스킬이 LINE 커버리지를
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>Java → Kotlin <strong>28.8% → 99.2%</strong></li><li>앱별 레포를 모노레포로 통합 → <strong>3개 앱 단일 구조</strong>
+운영</li><li>빌드 <strong>최대 8분 → 3분</strong></li></ul></div>
+</div><ul class="tags" translate="no"><li>Kotlin</li><li>Compose</li><li>MVI</li><li>Flow</li><li>멀티모듈</li><li>모노레포</li><li>Gradle Kotlin DSL</li><li>KSP</li><li>빌드 캐시</li></ul></article><article class="csec" id="c1-4"><h3>AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</h3><p class="meta">테스트 자동화<span class="sep"> · </span>2025.07 ~ 2026.02<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>기존 자동 생성 스킬이 LINE 커버리지를
 20.6%까지 올려둔 상태였는데, 생성된 테스트가 실패하면 결국 사람이 붙어야
 해서 그 위로 올라가지 못하고 있었습니다.</p>
 <p>자동화에 앞서 <strong>테스트를 어떤 모양으로 쓸지부터
@@ -239,17 +286,15 @@ LeakCanary는 이후 팀 빌드 옵션으로 정착</p>
 <p>핵심은 네 번째 <strong>수정 단계(Healer)</strong> 입니다. 실패한
 테스트를 자동 진단해 고치고 다시 검증 루프를 도는 구조라, 사람 개입 없이
 통과 가능한 지점까지 도달합니다.</p>
-<p><strong>결과</strong><br />
-- <strong>3,805줄 ViewModel 기준</strong> LINE <strong>20.6% →
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li><strong>3,805줄 ViewModel 기준</strong> LINE <strong>20.6% →
 83%</strong> / BRANCH 6.3% → 52% / METHOD 30% → 88% — 이후 전체
-ViewModel에 적용<br />
-- QA 집계 기준 <strong>회귀 버그 티켓 50% 감소</strong></p>
+ViewModel에 적용</li><li>QA 집계 기준 <strong>회귀 버그 티켓 50% 감소</strong></li></ul></div>
 <p>세 지표를 함께 보는 이유는 LINE만으로는 분기 미탐지가 가려지기
 때문입니다.</p>
 <p class="blk"><span class="lbl lbl-회고">회고</span>초기에 relaxed mock을 쓰다 분기를 못 잡는
 문제가 있었습니다. MockWebServer + JSON fixture 패턴으로
 전환했습니다.</p>
-</div><p class="tags">Claude Code<span class="sep"> · </span>JUnit5<span class="sep"> · </span>Turbine<span class="sep"> · </span>MockK<span class="sep"> · </span>JaCoCo</p></article><article class="csec" id="c1-5"><p class="cno">05</p><h3>상담봇 RAG 적용·최적화</h3><p class="meta">사내 AI 봇 운영<span class="sep"> · </span>2026.04 ~ 05<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>사내 AI 봇 운영을 맡았습니다. 고객 상담봇은
+</div><ul class="tags" translate="no"><li>Claude Code</li><li>JUnit5</li><li>Turbine</li><li>MockK</li><li>JaCoCo</li></ul></article><article class="csec" id="c1-5"><h3>상담봇 RAG 적용·최적화</h3><p class="meta">사내 AI 봇 운영<span class="sep"> · </span>2026.04 ~ 05<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>사내 AI 봇 운영을 맡았습니다. 고객 상담봇은
 <strong>최상위 모델이 질문마다 지식 베이스 전체를 훑어 답하는
 구조</strong>라 토큰 소모가 컸고, 가장 높은 요금제를 쓰고도 사용 한도에
 걸려 업무 시간 중에 상담이 멈추는 일이 생겼습니다. 자동응답 회수율도
@@ -260,10 +305,7 @@ ViewModel에 적용<br />
 만들었습니다.</strong> 오답률·회수율·건당 비용 3축을 매일 자동 수집한
 뒤, RAG 파이프라인과 토큰 구조를 재설계해 <strong>8개 variant를 Shadow
 A/B로 비교</strong>하고 대부분을 기각했습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>최종 후보 측정값<br />
-- 건당 비용 <strong>₩2,173 → ₩97</strong> (-96%)<br />
-- 자동응답 회수율 <strong>22% → 43%</strong><br />
-- overconfidence 73% → 20%</p>
+<div class="res"><span class="lbl lbl-결과">결과</span><p>최종 후보 측정값</p><ul><li>건당 비용 <strong>₩2,173 → ₩97</strong> (-96%)</li><li>자동응답 회수율 <strong>22% → 43%</strong></li><li>overconfidence 73% → 20%</li></ul></div>
 <p><strong>다만 배포는 중단했습니다.</strong> 카나리 배포 직전 지식
 베이스를 감사해 보니 <strong>고객에게 보여서는 안 되는 데이터</strong>가
 섞여 있었습니다. 자격 증명 평문 6건(플레이스토어 계정 포함)과 회사 계좌
@@ -275,7 +317,7 @@ A/B로 비교</strong>하고 대부분을 기각했습니다.</p>
 카테고리 표준 분류 724건입니다. 파이프라인 개선분은 보안 보고서와 조치
 권고를 올리고 <strong>봇 검색용 데이터와 사람 검토용 데이터를
 분리</strong>하는 설계 변경을 제안하는 데서 마무리했습니다.</p>
-</div><p class="tags">RAG<span class="sep"> · </span>Shadow A/B<span class="sep"> · </span>프롬프트 엔지니어링<span class="sep"> · </span>보안 감사</p></article><article class="csec" id="c1-6"><p class="cno">06</p><h3>원장·직원 회원가입 통합과 배포 체계 개선</h3><p class="meta">통합 회원가입<span class="sep"> · </span>2021.11 ~ 2022.03<span class="sep"> · </span>기여도 100%</p><p class="teamline">팀 구성 — Android 1 · iOS 1 · Frontend 1 · Backend 2 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>원장과 직원의 회원가입이 분리돼 있었습니다.
+</div><ul class="tags" translate="no"><li>RAG</li><li>Shadow A/B</li><li>프롬프트 엔지니어링</li><li>보안 감사</li></ul></article><article class="csec" id="c1-6"><h3>원장·직원 회원가입 통합과 배포 체계 개선</h3><p class="meta">통합 회원가입<span class="sep"> · </span>2021.11 ~ 2022.03<span class="sep"> · </span>기여도 100%</p><p class="team">팀 구성 · Android 1 · iOS 1 · Frontend 1 · Backend 2 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>원장과 직원의 회원가입이 분리돼 있었습니다.
 VOC·버그 대응으로 주 2~3회 불규칙하게 배포하던 상황이었습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>회원가입을 통합하고 강제/선택 업데이트를
 구현했습니다. 배포 후 백엔드 롤백이 필요한 크리티컬 이슈가 났는데,
@@ -283,17 +325,15 @@ VOC·버그 대응으로 주 2~3회 불규칙하게 배포하던 상황이었습
 그래서 <strong>Firebase RemoteConfig 피처 플래그 도입을 제안</strong>해
 배포 없이 기능을 켜고 끌 수 있게 했고, 불규칙 배포를 정기 배포로
 바꿨습니다. 업무 우선순위 제도도 함께 도입했습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>통합 회원가입 배포. 이후 장애는 앱 배포 없이
-피처 플래그로 기능을 내려 대응할 수 있게 됐고, 이후 큰 프로젝트 배포에서
-활용했습니다</p>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>통합 회원가입 배포.</li><li>이후 장애는 앱 배포 없이 피처 플래그로 기능을 내려 대응할 수 있게 됐고, 이후 큰 프로젝트 배포에서 활용했습니다</li></ul></div>
 <p class="blk"><span class="lbl lbl-회고">회고</span>백엔드는 바로 되돌릴 수 있어도 네이티브 앱은
 장애에 기민하게 대응하기 어렵다는 것을 겪었습니다. 정기 배포와 피처
 플래그가 왜 필요한지 이때 체감했습니다.</p>
-</div><p class="tags">RemoteConfig<span class="sep"> · </span>피처 플래그<span class="sep"> · </span>정기 배포</p></article><div class="csub" id="cmore"><h4 class="ch3">그 밖의 주요 프로젝트</h4><div class="cbody tailbody"><h4 class="ch4">
+</div><ul class="tags" translate="no"><li>RemoteConfig</li><li>피처 플래그</li><li>정기 배포</li></ul></article><section class="sub" id="cmore"><h3>그 밖의 주요 프로젝트</h3><div class="cbody"><h4 class="ch4" id="cm-1">
 네이버페이 매장결제 연동
 </h4>
-<p>네이버 연동 고도화 | 2025.11 ~ 2026.05 | 기여도 100%</p>
-<p class="teamline">
+<p class="meta">네이버 연동 고도화<span class="sep"> · </span>2025.11 ~ 2026.05<span class="sep"> · </span>기여도 100%</p>
+<p class="team">
 Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 </p>
 <p class="blk"><span class="lbl lbl-상황">상황</span>네이버 헤어샵을 통한 고객 유입을 늘리기 위해
@@ -311,20 +351,17 @@ MVI로 만들었고, 스타일 태그는 카테고리별 복수 선택이 가능
 케이스를 미리 만들어 개발하고 엣지 케이스를 먼저 공유했습니다. 외부
 결제가 섞이면서 달라지는 매출·포인트 계산은 경우별로 백엔드와 규칙을
 다시 맞췄습니다.</p>
-<p><strong>결과</strong><br />
-- 매장결제 · 예약금 · 쿠폰 · 스타일 태그 <strong>배포</strong><br />
-- 매출 ViewModel 단위 테스트는 <strong>자체 테스트 생성 파이프라인으로
-작성</strong>, <strong>네이버 예약 검증 E2E</strong> 플로우 구축</p>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>매장결제 · 예약금 · 쿠폰 · 스타일 태그 <strong>배포</strong></li><li>매출 ViewModel 단위 테스트는 <strong>자체 테스트 생성 파이프라인으로
+작성</strong>, <strong>네이버 예약 검증 E2E</strong> 플로우 구축</li></ul></div>
 <p class="blk"><span class="lbl lbl-회고">회고</span>폴링은 짧은 일정에 맞춘 선택이었습니다.
 서버가 결과를 알려주는 방식이 더 낫다는 점은 제안할 때 함께
 공유했습니다.</p>
-<p><code>Compose</code> <code>MVI</code> <code>외부 결제 연동</code>
-<code>Polling</code> <code>단위 테스트</code> <code>E2E</code></p>
-<h4 class="ch4">
+<ul class="tags" translate="no"><li>Compose</li><li>MVI</li><li>외부 결제 연동</li><li>Polling</li><li>단위 테스트</li><li>E2E</li></ul>
+<h4 class="ch4" id="cm-2">
 통계 화면 재구축과 차트 직접 구현
 </h4>
-<p>통계 개선 | 2025.01 ~ 06 · 2026.01 ~ 05 | 기여도 100%</p>
-<p class="teamline">
+<p class="meta">통계 개선<span class="sep"> · </span>2025.01 ~ 06 · 2026.01 ~ 05<span class="sep"> · </span>기여도 100%</p>
+<p class="team">
 Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 </p>
 <p class="blk"><span class="lbl lbl-상황">상황</span>통계 정합성 문제로 제공 중인 통계의 신뢰도가
@@ -342,16 +379,13 @@ Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 최적화했습니다. 채널별·고객 통계처럼 웹 대시보드에 있는 화면은 브릿지로
 네이티브↔︎웹을 오가게 연결했고, 메뉴는 용도별 3개 그룹 카드로
 재편했습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>통계 3종과 직원·고객·시간별·요일별 분석 화면
-배포 · 메뉴를 3그룹으로 재편해 매장이 한눈에 볼 수 있는 통계 화면
-제공</p>
-<p><code>Compose</code> <code>차트 직접 구현</code>
-<code>WebView Bridge</code> <code>derivedStateOf</code></p>
-<h4 class="ch4">
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>통계 3종과 직원·고객·시간별·요일별 분석 화면 배포</li><li>메뉴를 3그룹으로 재편해 매장이 한눈에 볼 수 있는 통계 화면 제공</li></ul></div>
+<ul class="tags" translate="no"><li>Compose</li><li>차트 직접 구현</li><li>WebView Bridge</li><li>derivedStateOf</li></ul>
+<h4 class="ch4" id="cm-3">
 매출 등록 화면 재설계
 </h4>
-<p>결제수단 다양화 | 2025.01 ~ 06 | 기여도 100%</p>
-<p class="teamline">
+<p class="meta">결제수단 다양화<span class="sep"> · </span>2025.01 ~ 06<span class="sep"> · </span>기여도 100%</p>
+<p class="team">
 Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 </p>
 <p class="blk"><span class="lbl lbl-상황">상황</span>매출 구조가 결제수단 하나를 전제로 만들어져
@@ -360,18 +394,16 @@ Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 <p class="blk"><span class="lbl lbl-해결">해결</span>매출 등록 화면의 상호작용 로직을 상태
 기반으로 구조화하고 Compose + MVI로 재설계했습니다. 백엔드 API가 나오기
 전에는 로컬 JSON 목 데이터로 통신 케이스를 미리 만들어 개발했습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>매출 등록/수정 · 포인트 · 회원권 결제 차감
-전면 구현 후 배포 · 담당 직원 복수 선택 등 기획 변경에 낮은 비용으로
-대응 · 함께 진행한 통계 3종은 바로 위 통계 항목에 정리</p>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>매출 등록/수정 · 포인트 · 회원권 결제 차감 전면 구현 후 배포</li><li>담당 직원 복수 선택 등 기획 변경에 낮은 비용으로 대응</li><li>함께 진행한 통계 3종은 바로 위 통계 항목에 정리</li></ul></div>
 <p class="blk"><span class="lbl lbl-회고">회고</span>기존 정책을 유지하는 로직에서도 결제 구조
 개편의 사이드 이펙트가 났습니다. 변경 사항 간 연관성을 미리 점검했어야
 했습니다.</p>
-<p><code>Compose</code> <code>MVI</code> <code>로컬 목 데이터</code></p>
-<h4 class="ch4">
+<ul class="tags" translate="no"><li>Compose</li><li>MVI</li><li>로컬 목 데이터</li></ul>
+<h4 class="ch4" id="cm-4">
 고객 필터·그룹 기능 구현
 </h4>
-<p>고객 목록 개선 | 2024.07 ~ 11 | 기여도 100%</p>
-<p class="teamline">
+<p class="meta">고객 목록 개선<span class="sep"> · </span>2024.07 ~ 11<span class="sep"> · </span>기여도 100%</p>
+<p class="team">
 Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 </p>
 <p class="blk"><span class="lbl lbl-상황">상황</span>고객 목록에 필터·그룹 기능이 없어 매장이
@@ -384,15 +416,13 @@ Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 컴포넌트는 디자이너와 상의해 공통 컴포넌트로 추가했습니다. 실시간 검색은
 debounce로 불필요한 API 호출을 줄였고, 드래그앤드롭은 OS 업데이트로 외부
 라이브러리가 깨져 직접 구현으로 바꿨습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>필터·그룹 기능 배포 · B2B 앱의 Compose 전환
-시작점</p>
-<p><code>Compose</code> <code>MVI</code> <code>디자인 시스템</code>
-<code>Paging3</code> <code>Turbine</code></p>
-<h4 class="ch4">
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>필터·그룹 기능 배포</li><li>B2B 앱의 Compose 전환 시작점</li></ul></div>
+<ul class="tags" translate="no"><li>Compose</li><li>MVI</li><li>디자인 시스템</li><li>Paging3</li><li>Turbine</li></ul>
+<h4 class="ch4" id="cm-5">
 웹뷰 브릿지 공통화
 </h4>
-<p>캘린더·예약 개편 | 2022.08 ~ 2023.07 | 기여도 90%</p>
-<p class="teamline">
+<p class="meta">캘린더·예약 개편<span class="sep"> · </span>2022.08 ~ 2023.07<span class="sep"> · </span>기여도 90%</p>
+<p class="team">
 Android 2 · iOS 2 · Frontend 2 · Backend 3 · Product Designer 1
 </p>
 <p class="blk"><span class="lbl lbl-상황">상황</span>플랫폼별 캘린더 UX가 달라 사용자 혼란이
@@ -405,17 +435,15 @@ Android 2 · iOS 2 · Frontend 2 · Backend 3 · Product Designer 1
 15개 이상으로 컨벤션화하고 문서화</strong>해, 쿠키 인증 + 단일 Activity
 구성으로 화면 뎁스와 무관하게 재사용되게 했습니다. 테스트가 없던
 시점이라 JUnit5도 이 프로젝트에서 처음 들였습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>이후 메시지 발송·네이버 연동 등 <strong>새로
-추가된 WebView 기능이 이 브릿지를 재사용</strong></p>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>이후 메시지 발송·네이버 연동 등 <strong>새로 추가된 WebView 기능이 이 브릿지를 재사용</strong></li></ul></div>
 <p class="blk"><span class="lbl lbl-회고">회고</span>초기 고객 니즈 파악이 미흡해 클레임이
 발생했습니다. 이를 계기로 기획 단계에 고객 인터뷰 프로세스를
 제안했습니다.</p>
-<p><code>WebView Bridge</code> <code>Paging3</code> <code>FCM</code>
-<code>JUnit5</code></p>
-</div></div><div class="csub" id="clead"><h4 class="ch3">네이티브 팀장</h4><div class="cbody tailbody"><p class="meta">
+<ul class="tags" translate="no"><li>WebView Bridge</li><li>Paging3</li><li>FCM</li><li>JUnit5</li></ul>
+</div></section><section class="sub" id="clead"><h3>네이티브 팀장</h3><div class="cbody"><p class="meta">
 2025.11 ~ 2026.05 (7개월)
 </p>
-<p class="teamline">
+<p class="team">
 Android 2(본인 포함) · iOS 2 · QA 1 네이티브 팀
 </p>
 <ul>
@@ -435,10 +463,10 @@ Android 2(본인 포함) · iOS 2 · QA 1 네이티브 팀
 <li>팀원들과 AI 도구 활용법을 공유했고, iOS 개발자가 Perplexity 기반
 정책봇을 만드는 등 플랫폼 경계를 넘는 시도로 이어졌습니다.</li>
 </ul>
-</div></div><div class="csub" id="cetc"><h4 class="ch3">그 밖의 작업</h4><div class="cbody tailbody"><h4 class="ch4">
+</div></section><section class="sub" id="cetc"><h3>그 밖의 작업</h3><div class="cbody"><h4 class="ch4" id="ce-1">
 Claude Code 커스텀 스킬 14종 개발
 </h4>
-<p>AI 기반 Android 개발 고도화 | 2025.07 ~ 2026.02 | 기여도 100%</p>
+<p class="meta">AI 기반 Android 개발 고도화<span class="sep"> · </span>2025.07 ~ 2026.02<span class="sep"> · </span>기여도 100%</p>
 <p class="blk"><span class="lbl lbl-상황">상황</span>테스트 코드 작성, Compose UI 구현, API 연동
 코드, 문자열 리소스, 작업 티켓·브랜치·커밋·PR 생성처럼 작업마다 반복되는
 일이 많았습니다. AI 도구를 들인 초기에는 활용 수준이 사람마다 크게
@@ -453,15 +481,9 @@ Claude Code 커스텀 스킬 14종 개발
 디자인시스템(컬러·타이포그래피·컴포넌트)을 컨벤션 문서로
 구조화</strong>해 가이드에 가까운 Compose 코드가 나오도록 했습니다.
 브랜치·커밋·PR·문자열 리소스 컨벤션도 같은 방식으로 문서화했습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>반복되는 작업을 AI에 위임해 핵심 개발에
-집중할 수 있는 환경을 만들어 생산성을 높임 · 스킬 14종과 컨벤션 문서를
-레포에 올리고 사용법을 <strong>팀 공통 문서</strong>로 전파해 팀원들도
-사용 · 플랫폼이 달라도 서로의 스킬을 볼 수 있게 팀 간 레포 열람 권한을
-정리 · <code>compose-ui</code>로 만든 화면은 대부분 큰 수정 없이 리뷰를
-통과</p>
-<p><code>Claude Code</code> <code>MCP</code>
-<code>프롬프트·컨텍스트 엔지니어링</code> <code>컨벤션 문서화</code></p>
-<h4 class="ch4">
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>반복되는 작업을 AI에 위임해 핵심 개발에 집중할 수 있는 환경을 만들어 생산성을 높임</li><li>스킬 14종과 컨벤션 문서를 레포에 올리고 사용법을 <strong>팀 공통 문서</strong>로 전파해 팀원들도 사용</li><li>플랫폼이 달라도 서로의 스킬을 볼 수 있게 팀 간 레포 열람 권한을 정리</li><li><code>compose-ui</code>로 만든 화면은 대부분 큰 수정 없이 리뷰를 통과</li></ul></div>
+<ul class="tags" translate="no"><li>Claude Code</li><li>MCP</li><li>프롬프트·컨텍스트 엔지니어링</li><li>컨벤션 문서화</li></ul>
+<h4 class="ch4" id="ce-2">
 상담 이력 자동 등록
 </h4>
 <p class="meta">
@@ -478,7 +500,7 @@ Claude Code 커스텀 스킬 14종 개발
 두어 스크립트가 죽어도 판정이 흔들리지 않게 함 · 등록은 됐는데 상태
 전환만 실패한 건은 재처리 큐로 분리 · 모델이 고른 카테고리가 실제 분류
 트리에 있는지 역검증하고, 확신도가 낮으면 ’기타’로 처리</p>
-<h4 class="ch4">
+<h4 class="ch4" id="ce-3">
 AI 봇 운영 대시보드
 </h4>
 <p class="meta">
@@ -495,7 +517,7 @@ AI 봇 운영 대시보드
 상시 떠 있는 화면이라 메모리·CPU 부하를 최소화하는 것을 제약으로 둠 ·
 사용 가이드를 문서로 남겨 <strong>직무와 상관없이 누구나 보고 조치할 수
 있게</strong> 공유</p>
-<h4 class="ch4">
+<h4 class="ch4" id="ce-4">
 사내 API용 MCP 서버
 </h4>
 <p class="meta">
@@ -507,7 +529,7 @@ MCP 서버를 만들었습니다. 완성 후 네이티브 팀 구성원에게 �
 <span class="lbl">한 일</span> <strong>도구 87개</strong> 구현(GET 84 / WRITE
 3) · 53개에 직원 권한 코드 7종 매핑으로 접근 제한 + 연락처 마스킹 ·
 토큰을 평문 파일 대신 macOS Keychain에서 로드</p>
-</div></div></section><section id="co2"><h2>(주) 대교</h2><p class="subline">Android 프리랜서<span class="sep"> · </span>2020.12 ~ 2021.06</p><p class="text"><strong>대교 써밋 국어</strong> — 초등학생 국어 학습 태블릿 앱 · 필기와 음성이 주 입력 방식</p><article class="csec" id="c2-1"><p class="cno">01</p><h3>S-Pen 필기 입력과 음성 인식 통합</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>초등학생 국어 학습 앱이라 필기와 음성이 주
+</div></section></section><section class="cco" id="co2" aria-labelledby="coh2"><header class="cohd"><span class="when">2020.12 ~ 2021.06</span><h2 id="coh2">(주) 대교</h2><p class="role">Android 프리랜서</p><p class="svc"><strong>대교 써밋 국어</strong> — 초등학생 국어 학습 태블릿 앱 · 필기와 음성이 주 입력 방식</p></header><article class="csec" id="c2-1"><h3>S-Pen 필기 입력과 음성 인식 통합</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>초등학생 국어 학습 앱이라 필기와 음성이 주
 입력 방식이었습니다. 학습 노트와 문제 풀이에는 필기가, 소리 내어 읽기
 평가에는 음성 인식이 필요했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>Samsung S-Pen SDK로 <strong>학습 노트·문제
@@ -515,7 +537,7 @@ MCP 서버를 만들었습니다. 완성 후 네이티브 팀 구성원에게 �
 음독 평가는 음성 인식(STT)을 통합했는데, 벤더는 같은 문구로 구글 STT와
 비교 테스트해 <strong>한글 인식률이 우위였던 셀바스</strong>로
 정했습니다.</p>
-</div><p class="tags">Samsung S-Pen SDK<span class="sep"> · </span>셀바스 STT<span class="sep"> · </span>Java</p></article><article class="csec" id="c2-2"><p class="cno">02</p><h3>학습 결과 시각화와 앱 안정성 관리</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>학습 결과를 아이가 한눈에 볼 수 있게 보여줘야
+</div><ul class="tags" translate="no"><li>Samsung S-Pen SDK</li><li>셀바스 STT</li><li>Java</li></ul></article><article class="csec" id="c2-2"><h3>학습 결과 시각화와 앱 안정성 관리</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>학습 결과를 아이가 한눈에 볼 수 있게 보여줘야
 했고, 교육용 태블릿 여러 기종에서 안정적으로 돌아가야 했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>MPAndroidChart 차트와 WebView 기반
 워드클라우드로 학습 결과를 시각화했습니다. Android Profiler로 메모리
@@ -523,34 +545,51 @@ MCP 서버를 만들었습니다. 완성 후 네이티브 팀 구성원에게 �
 맞췄습니다. Volley로 네트워크 통신을 구성하고 Firebase
 Crashlytics·Analytics·IMQA로 모니터링 체계를 갖췄으며, 코드는
 Javadoc으로 문서화했습니다.</p>
-</div><p class="tags">MPAndroidChart<span class="sep"> · </span>WebView<span class="sep"> · </span>Android Profiler<span class="sep"> · </span>Crashlytics<span class="sep"> · </span>IMQA</p></article></section><section id="co3"><h2>메디팔</h2><p class="subline">Android 프리랜서<span class="sep"> · </span>2020.06 ~ 2020.07</p><p class="text"><strong>메디팔</strong> — 환자와 간호사를 1:1로 매칭해 건강관리를 제공하는 서비스</p><article class="csec" id="c3-1"><p class="cno">01</p><h3>WebSocket 기반 실시간 채팅 구현</h3><p class="meta">메디팔 앱<span class="sep"> · </span>2020.06 ~ 2020.07<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>Android 앱을 착수 단계부터 혼자 맡았습니다.
+</div><ul class="tags" translate="no"><li>MPAndroidChart</li><li>WebView</li><li>Android Profiler</li><li>Crashlytics</li><li>IMQA</li></ul></article></section><section class="cco" id="co3" aria-labelledby="coh3"><header class="cohd"><span class="when">2020.06 ~ 2020.07</span><h2 id="coh3">메디팔</h2><p class="role">Android 프리랜서</p><p class="svc"><strong>메디팔</strong> — 환자와 간호사를 1:1로 매칭해 건강관리를 제공하는 서비스</p></header><article class="csec" id="c3-1"><h3>WebSocket 기반 실시간 채팅 구현</h3><p class="meta">메디팔 앱<span class="sep"> · </span>2020.06 ~ 2020.07<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>Android 앱을 착수 단계부터 혼자 맡았습니다.
 환자와 간호사가 실시간으로 대화하는 채팅이 핵심 기능이었습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>텍스트와 이미지를 주고받는 채팅방을
 WebSocket으로 직접 구현했습니다. 채팅 이미지는 기기에 캐싱해 대화 기록을
 다시 볼 때 매번 내려받지 않게 했습니다. Retrofit 기반 네트워크 통신,
 ExoPlayer 미디어 플레이어, 채널톡 API 연동, FCM 푸시를 함께
 구현했습니다.</p>
-<p class="blk"><span class="lbl lbl-결과">결과</span>착수부터 배포까지 2개월 · 자체 QA 후 스토어
-배포</p>
-</div><p class="tags">WebSocket<span class="sep"> · </span>Retrofit<span class="sep"> · </span>ExoPlayer<span class="sep"> · </span>FCM<span class="sep"> · </span>Java</p></article></section><section id="co4"><h2>(주) 씨커스블록체인</h2><p class="subline">Android<span class="sep"> · </span>2018.08 ~ 2019.09</p><p class="text"><strong>비트탑</strong> — 암호화폐 거래소 앱</p><article class="csec" id="c4-1"><p class="cno">01</p><h3>Web3j 기반 이더리움 네트워크 연동</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09<span class="sep"> · </span>기여도 30%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 앱에서 이더리움과 ERC-20 토큰의
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>착수부터 배포까지 2개월</li><li>자체 QA 후 스토어 배포</li></ul></div>
+</div><ul class="tags" translate="no"><li>WebSocket</li><li>Retrofit</li><li>ExoPlayer</li><li>FCM</li><li>Java</li></ul></article></section><section class="cco" id="co4" aria-labelledby="coh4"><header class="cohd"><span class="when">2018.08 ~ 2019.09</span><h2 id="coh4">(주) 씨커스블록체인</h2><p class="role">Android</p><p class="svc"><strong>비트탑</strong> — 암호화폐 거래소 앱</p></header><article class="csec" id="c4-1"><h3>Web3j 기반 이더리움 네트워크 연동</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09<span class="sep"> · </span>기여도 30%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 앱에서 이더리움과 ERC-20 토큰의
 잔액·거래 내역을 모바일 화면에 보여줘야 했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span><strong>Web3j</strong>로 이더리움 네트워크와
 직접 통신하는 모듈을 개발해 ERC-20 토큰 잔액과 거래 내역을 조회하고
 화면에 표시했습니다. 블록체인 통신의 <strong>비동기 처리와 에러
 핸들링</strong>을 구현했고, 실시간 시세 조회·거래 기능, <strong>키스토어
 기반 개인키 관리</strong>, PIN·지문 인증을 맡았습니다.</p>
-</div><p class="tags">Web3j<span class="sep"> · </span>Keystore<span class="sep"> · </span>Java</p></article><article class="csec" id="c4-2"><p class="cno">02</p><h3>인증 연동과 품질 관리, 백엔드 REST API 개발</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09<span class="sep"> · </span>기여도 30%</p><div class="cbody"><p class="blk"><span class="lbl lbl-해결">해결</span>WebView로 휴대전화 본인확인(다날)과
+</div><ul class="tags" translate="no"><li>Web3j</li><li>Keystore</li><li>Java</li></ul></article><article class="csec" id="c4-2"><h3>인증 연동과 품질 관리, 백엔드 REST API 개발</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09<span class="sep"> · </span>기여도 30%</p><div class="cbody"><p class="blk"><span class="lbl lbl-해결">해결</span>WebView로 휴대전화 본인확인(다날)과
 도로명주소 입력을 연동했습니다. LeakCanary로 메모리 누수를 점검하고
 FCM·Analytics·Crashlytics를 도입했습니다. Android와 함께
 <strong>Spring·JPA 기반 백엔드 REST API도 직접
 개발</strong>했습니다.</p>
-</div><p class="tags">Spring<span class="sep"> · </span>JPA<span class="sep"> · </span>LeakCanary<span class="sep"> · </span>FCM</p></article></section>
+</div><ul class="tags" translate="no"><li>Spring</li><li>JPA</li><li>LeakCanary</li><li>FCM</li></ul></article></section><div class="tail" aria-hidden="true"></div>
 <footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-10-15</footer>
 </main>
-</div>
-<script>
-(function(){var links=[].slice.call(document.querySelectorAll("#toc a")),secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
-if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})})},{rootMargin:"-20% 0px -70% 0px"});secs.forEach(function(s){s&&io.observe(s)})}
-})();
-</script>
+<script>(function(){var b=document.querySelector(".bar"),h=document.querySelector("main h1");if(!b||!h)return;var t=0;function u(){t=0;b.classList.toggle("scrolled",h.getBoundingClientRect().bottom<b.offsetHeight)}addEventListener("scroll",function(){if(!t)t=requestAnimationFrame(u)},{passive:true});addEventListener("load",u);u()})();</script>
+<script>(function(){var btn=document.querySelector(".tocbtn"),p=document.getElementById("tocp");
+function set(o){p.hidden=!o;btn.setAttribute("aria-expanded",o?"true":"false")}
+if(btn&&p){btn.addEventListener("click",function(e){e.stopPropagation();set(p.hidden)});
+p.addEventListener("click",function(e){if(e.target.closest("a"))set(false)});
+document.addEventListener("click",function(e){if(!p.hidden&&!p.contains(e.target))set(false)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden){set(false);btn.focus()}})}
+var links=[].slice.call(document.querySelectorAll(".toc-list a")),ids=[],seen={};
+links.forEach(function(a){var h=a.getAttribute("href").slice(1);if(!seen[h]){seen[h]=1;ids.push(h)}});
+var secs=ids.map(function(i){return document.getElementById(i)}).filter(Boolean),t=0,lock=null,lockT=0;
+/* 마지막 회사 제목이 화면 위까지 올라올 수 있도록 페이지 끝 여백을 필요한 만큼만 둔다 */
+var tail=document.querySelector(".tail"),lastCo=document.getElementById([].slice.call(document.querySelectorAll(".toc-list .co-l a")).pop().getAttribute("href").slice(1));
+function pad(){if(!tail||!lastCo)return;tail.style.height="0px";var top=parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||0,
+rest=document.documentElement.scrollHeight-(lastCo.getBoundingClientRect().top+scrollY);tail.style.height=Math.max(0,innerHeight-top-rest)+"px"}
+function mark(cur){links.forEach(function(a){var on=!!cur&&a.getAttribute("href")==="#"+cur.id;a.classList.toggle("on",on);if(on)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")});
+var side=document.querySelector(".side-toc"),sa=side&&side.querySelector("a.on");
+if(sa&&side.offsetParent){var r=sa.getBoundingClientRect(),nr=side.getBoundingClientRect();if(r.top<nr.top+20||r.bottom>nr.bottom-20)side.scrollTop+=r.top-nr.top-nr.height/2}}
+function hl(){t=0;if(lock){mark(lock);return}var cur=secs[0],i;
+if(innerHeight+scrollY>=document.documentElement.scrollHeight-2){for(i=0;i<secs.length;i++)if(secs[i].getBoundingClientRect().top<innerHeight-120)cur=secs[i]}
+else{for(i=0;i<secs.length;i++){if(secs[i].getBoundingClientRect().top<130)cur=secs[i];else break}}mark(cur)}
+/* 목차를 누르면 누른 항목을 바로 강조하고, 스크롤이 멈출 때까지 유지 */
+links.forEach(function(a){a.addEventListener("click",function(){lock=document.getElementById(a.getAttribute("href").slice(1));mark(lock);clearTimeout(lockT);lockT=setTimeout(function(){lock=null},1200);var tg=lock;setTimeout(function(){if(!tg.hasAttribute("tabindex"))tg.setAttribute("tabindex","-1");tg.focus({preventScroll:true})},0)})});
+addEventListener("scroll",function(){if(lock){clearTimeout(lockT);lockT=setTimeout(function(){lock=null},250)}if(!t)t=requestAnimationFrame(hl)},{passive:true});
+addEventListener("resize",pad);addEventListener("load",function(){pad();hl()});pad();hl()})();</script>
 </body></html>
