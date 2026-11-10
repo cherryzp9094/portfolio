@@ -220,7 +220,7 @@ Glance 기본 저장소(Preferences)는 문자열·숫자 같은 단일 값만 �
 이 프로젝트에서 <strong>LeakCanary를 도입</strong>해 Crashlytics·ANR이
 못 잡던 메모리 누수를 잡기 시작했고, 이후 실제 누수 수정으로
 이어졌습니다.</p>
-<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>데이터 불일치·텍스트 VOC 해소</li><li>절전 모드 해제 안내 UI 제공</li><li>운영 기간 위젯 관련 크래시 0건(Crashlytics)</li><li>LeakCanary는 이후 팀 빌드 옵션으로 정착</li></ul></div>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>데이터 불일치·텍스트 VOC 해소</li><li>절전 모드 해제 안내 UI 제공</li><li>운영 기간 위젯 관련 크래시 0건(Crashlytics)</li><li>LeakCanary로 찾은 메모리 누수 수정, 이후 팀 빌드 옵션으로 정착</li></ul></div>
 <p class="blk"><span class="lbl lbl-회고">회고</span>텍스트 크기 조정은 앱을 한 번 실행해야
 반영됩니다. 위젯 단독으로 갱신할 방법을 못 찾았고, 그 한계는 그대로
 남았습니다.</p>
@@ -251,7 +251,7 @@ Glance 기본 저장소(Preferences)는 문자열·숫자 같은 단일 값만 �
 </tr>
 <tr>
 <td>3</td>
-<td><strong>MVVM → MVI</strong></td>
+<td><strong>MVC → MVVM → MVI</strong></td>
 <td>Compose·MVI 스터디를 열어 구성원과 함께 학습하고 코드 컨벤션
 정리</td>
 </tr>
@@ -266,20 +266,21 @@ Glance 기본 저장소(Preferences)는 문자열·숫자 같은 단일 값만 �
 빌드와 캐시가 꺼져 있어 최대 8분이 걸렸습니다. VersionCatalog로 모듈 간
 버전을 맞추고, AGP·Gradle 최신화, Hilt의 kapt → KSP 전환과 Kotlin
 2.0(K2) 업그레이드, 병렬 빌드·캐시 활성화로 빌드 시간을 줄였습니다.</p>
-<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>Java → Kotlin <strong>28.8% → 99.2%</strong></li><li>앱별 레포를 모노레포로 통합 → <strong>3개 앱 단일 구조</strong>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>Kotlin 비율 <strong>28.8% → 99.2%</strong></li><li>앱별 레포를 모노레포로 통합 → <strong>3개 앱 단일 구조</strong>
 운영</li><li>빌드 <strong>최대 8분 → 3분</strong></li></ul></div>
-</div><ul class="tags" translate="no"><li>Kotlin</li><li>Compose</li><li>MVI</li><li>Flow</li><li>멀티모듈</li><li>모노레포</li><li>Gradle Kotlin DSL</li><li>KSP</li><li>빌드 캐시</li></ul></article><article class="csec" id="c1-4"><h3>AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</h3><p class="meta">테스트 자동화<span class="sep"> · </span>2025.07 ~ 2026.02<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>기존 자동 생성 스킬이 LINE 커버리지를
-20.6%까지 올려둔 상태였는데, 생성된 테스트가 실패하면 결국 사람이 붙어야
-해서 그 위로 올라가지 못하고 있었습니다.</p>
+</div><ul class="tags" translate="no"><li>Kotlin</li><li>Compose</li><li>MVI</li><li>Flow</li><li>멀티모듈</li><li>모노레포</li><li>Gradle Kotlin DSL</li><li>KSP</li><li>빌드 캐시</li></ul></article><article class="csec" id="c1-4"><h3>AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</h3><p class="meta">테스트 자동화<span class="sep"> · </span>2025.07 ~ 2026.02<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>매출 ViewModel은 기존 자동 생성 스킬로 LINE
+커버리지 20.6%까지 올린 뒤 멈춰 있었습니다. 필요한 테스트 코드가 AI가 한
+번에 다룰 수 있는 양(컨텍스트)을 넘었고, 생성된 테스트가 실패하면 결국
+사람이 붙어야 했습니다.</p>
 <p>자동화에 앞서 <strong>테스트를 어떤 모양으로 쓸지부터
 정했습니다.</strong> Given-When-Then 패턴을 표준으로 잡아 요구사항
 단위로 시나리오를 설계했고, 대상은 ViewModel의 비즈니스 로직으로
 한정했고(JUnit5 · MockK · Turbine), UI 테스트는 이 파이프라인의 범위에
 넣지 않았습니다. <strong>형식이 정해져 있어야 자동 생성이 의미를
 갖는다</strong>고 봤기 때문입니다.</p>
-<p class="blk"><span class="lbl lbl-해결">해결</span>생성만으로는 부족하다고 보고, <strong>고치는
-단계까지 넣은</strong> 5단계 파이프라인을 Claude Code로
-설계했습니다.</p>
+<p class="blk"><span class="lbl lbl-해결">해결</span>생성만으로는 부족하다고 보고,
+<strong>테스트를 기능 단위로 나눠 실행하고 고치는 단계까지 넣은</strong>
+5단계 파이프라인을 Claude Code로 설계했습니다.</p>
 <pre><code>Planner → Scaffold → Generator → Healer → Coverage
                           ↑          ↓
                           └──────────┘  실패 테스트 자동 진단·수정 루프</code></pre>
@@ -371,15 +372,16 @@ Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1
 만들었습니다. Compose 차트 라이브러리가 레퍼런스가 적고 커스터마이징에
 제약이 있어, 디자인 가이드를 반영해 차트를 직접 구현하고 확장성과 UX
 일관성을 기준으로 설계했습니다.</p>
-<p>이후 이 차트 컴포넌트 위에 네 화면을 Compose로 구현했습니다. 차트는
-막대·라인·테이블 세 종류를 직접 구현했습니다. 시간별·요일별 차트는
-매출이 없는 시간대를 영업시간 기준으로 x축에 채우고, 24시 자정을 넘는
-구간과 화면별 y축 단위를 따로 처리했습니다. 직원 통계 목록은 스크롤이
-무거워 <code>derivedStateOf</code>·shadow·NumberFormat 재사용으로
+<p>이후 이 차트 컴포넌트 위에 직원·시간별·요일별 세 화면을 Compose로
+구현했습니다. 차트는 막대·라인·테이블 세 종류를 직접 구현했습니다.
+시간별·요일별 차트는 매출이 없는 시간대를 영업시간 기준으로 x축에
+채우고, 24시 자정을 넘는 구간과 화면별 y축 단위를 따로 처리했습니다.
+직원 통계 목록은 스크롤이 무거워
+<code>derivedStateOf</code>·shadow·NumberFormat 재사용으로
 최적화했습니다. 채널별·고객 통계처럼 웹 대시보드에 있는 화면은 브릿지로
 네이티브↔︎웹을 오가게 연결했고, 메뉴는 용도별 3개 그룹 카드로
 재편했습니다.</p>
-<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>통계 3종과 직원·고객·시간별·요일별 분석 화면 배포</li><li>메뉴를 3그룹으로 재편해 매장이 한눈에 볼 수 있는 통계 화면 제공</li></ul></div>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>통계 3종과 직원·시간별·요일별 분석 화면 배포</li><li>메뉴를 3그룹으로 재편해 매장이 한눈에 볼 수 있는 통계 화면 제공</li></ul></div>
 <ul class="tags" translate="no"><li>Compose</li><li>차트 직접 구현</li><li>WebView Bridge</li><li>derivedStateOf</li></ul>
 <h4 class="ch4" id="cm-3">
 매출 등록 화면 재설계
@@ -533,10 +535,10 @@ MCP 서버를 만들었습니다. 완성 후 네이티브 팀 구성원에게 �
 입력 방식이었습니다. 학습 노트와 문제 풀이에는 필기가, 소리 내어 읽기
 평가에는 음성 인식이 필요했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>Samsung S-Pen SDK로 <strong>학습 노트·문제
-풀이 영역</strong>에 필기 인식을 구현했습니다(필압 감지·손바닥 리젝션).
-음독 평가는 음성 인식(STT)을 통합했는데, 벤더는 같은 문구로 구글 STT와
-비교 테스트해 <strong>한글 인식률이 우위였던 셀바스</strong>로
-정했습니다.</p>
+풀이 영역</strong>에 필기 입력(필압 감지·손바닥 리젝션)과 손글씨를
+글자로 바꾸는 필기 인식을 구현했습니다. 음독 평가는 음성 인식(STT)을
+통합했는데, 벤더는 같은 문구로 구글 STT와 비교 테스트해 <strong>한글
+인식률이 우위였던 셀바스</strong>로 정했습니다.</p>
 </div><ul class="tags" translate="no"><li>Samsung S-Pen SDK</li><li>셀바스 STT</li><li>Java</li></ul></article><article class="csec" id="c2-2"><h3>학습 결과 시각화와 앱 안정성 관리</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>학습 결과를 아이가 한눈에 볼 수 있게 보여줘야
 했고, 교육용 태블릿 여러 기종에서 안정적으로 돌아가야 했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>MPAndroidChart 차트와 WebView 기반
@@ -566,7 +568,7 @@ FCM·Analytics·Crashlytics를 도입했습니다. Android와 함께
 <strong>Spring·JPA 기반 백엔드 REST API도 직접
 개발</strong>했습니다.</p>
 </div><ul class="tags" translate="no"><li>Spring</li><li>JPA</li><li>LeakCanary</li><li>FCM</li></ul></article></section><div class="tail" aria-hidden="true"></div>
-<footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-10-15</footer>
+<footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-11-10</footer>
 </main>
 <script>(function(){var b=document.querySelector(".bar"),h=document.querySelector("main h1");if(!b||!h)return;var t=0;function u(){t=0;b.classList.toggle("scrolled",h.getBoundingClientRect().bottom<b.offsetHeight)}addEventListener("scroll",function(){if(!t)t=requestAnimationFrame(u)},{passive:true});addEventListener("load",u);u()})();</script>
 <script>(function(){var btn=document.querySelector(".tocbtn"),p=document.getElementById("tocp");
