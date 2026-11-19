@@ -252,13 +252,13 @@ LeakCanary도 도입해 Crashlytics로는 못 잡던 메모리 누수를 찾아
 </tr>
 </tbody>
 </table></div>
-<p>아키텍처를 옮긴 뒤 다음 병목은 빌드였습니다. 구버전 AGP에 병렬 빌드와
-캐시가 꺼져 있어 최대 8분이 걸렸습니다. VersionCatalog로 모듈 간 버전을
-맞추고 AGP와 Gradle을 최신화했습니다. 어노테이션 처리는 kapt가 필요한
-일부를 제외하고 KSP로 전환했습니다. 이어서 Kotlin 2.0 K2 컴파일러로
-올리고 병렬 빌드와 캐시를 켜 빌드 시간을 줄였습니다.</p>
+<p>아키텍처를 옮긴 뒤에는 앱 빌드가 최대 8분까지 걸려 다음 병목이
+됐습니다. 어노테이션 처리는 kapt가 필요한 일부만 남기고 KSP로 전환했고
+Kotlin 2.0 K2 컴파일러로 올렸습니다. 여기에 VersionCatalog로 모듈 간
+버전을 맞추고 AGP와 Gradle을 최신화하면서 병렬 빌드와 캐시도
+켰습니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>Kotlin 비율 28.8% → 99.2%</li><li>3개 앱을 하나의 모노레포로 통합해 공통 모듈 공유</li><li>Compose 디자인 시스템의 테마와 공통 컴포넌트를 직접 구축해 화면 전환의
-기반으로 사용</li><li>Activity 기준 약 85%를 Compose로 전환</li><li>빌드 최대 8분 → 3분</li></ul></div>
+기반으로 사용</li><li>Activity 기준 약 85%를 Compose로 전환</li><li>빌드 시간 최대 8분 → 3분 단축</li></ul></div>
 </div><ul class="tags" translate="no"><li>Kotlin</li><li>Compose</li><li>MVI</li><li>Flow</li><li>멀티모듈</li><li>모노레포</li><li>KSP</li><li>빌드 캐시</li></ul></article><article class="csec" id="c1-4"><h3>Compose·MVI 성능 최적화</h3><p class="meta">고객 목록 개선<span class="sep"> · </span>2024.07 ~ 11<span class="sep"> · </span>기여도 100%</p><p class="team">팀 구성 · Android 1 · iOS 1 · Frontend 1 · Backend 1 · Product Designer 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>고객 목록에 필터와 그룹 기능을 더하면서 항목
 추가나 입력 필드 변경처럼 일부 값만 바뀌어도 리스트 전체가
 리컴포지션되어 화면이 버벅이는 현상이 발생했습니다. 목록을 스크롤할 때도
@@ -331,10 +331,9 @@ data-cites="Stable을">@Stable을</span> 붙여 바뀌지 않은 부분은 건�
 함수 이름, 주고받을 값, 액션별 동작을 웹 개발자와 매번 다시 맞춰야
 했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>이 프로젝트 하나만 고치는 대신 다음에도 쓸 수
-있는 구조를 만들기로 했습니다. 웹뷰 브릿지를 공통 함수 15개 이상으로
-컨벤션화하고 사용법 문서와 함께 개발팀 전체에 공유했습니다. 쿠키 인증과
-공통 Activity 구성으로 어떤 웹뷰 화면이든 같은 방식으로 재사용되게
-했습니다.</p>
+있는 구조를 만들기로 했습니다. 웹뷰 브릿지를 공통 함수로 컨벤션화하고
+사용법 문서와 함께 개발팀 전체에 공유했습니다. 쿠키 인증과 공통 Activity
+구성으로 어떤 웹뷰 화면이든 같은 방식으로 재사용되게 했습니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>웹 개발자와 네이티브 개발자 사이의 소통 비용 감소</li><li>공통 웹뷰 구성과 브릿지 재사용으로 웹뷰 기능 구현 시간 단축</li></ul></div>
 </div><ul class="tags" translate="no"><li>WebView Bridge</li></ul></article><section class="sub" id="cmore"><h3>그 밖의 주요 프로젝트</h3><div class="cbody"><h4 class="ch4" id="cm-1">
 네이버페이 매장결제 연동
