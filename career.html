@@ -435,24 +435,26 @@ Android 2 · iOS 2 · QA 1 네이티브 팀
 읽기 평가에는 음성 인식이 필요했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>Samsung S-Pen SDK로 학습 노트와 문제 풀이
 영역에 필기 입력과 손글씨를 글자로 바꾸는 필기 인식을 구현했습니다. 음독
-평가에는 음성 인식을 통합했고 벤더는 같은 문구로 구글 음성 인식과 비교
-테스트해 한글 인식률이 더 높은 셀바스로 정했습니다.</p>
-<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>비교 테스트로 한글 인식률이 더 높은 음성 인식 엔진을 채택해 음독 평가 정확도 향상</li></ul></div>
+평가에는 음성 인식을 통합했고 음성 인식 엔진은 같은 문구로 구글 음성
+인식과 비교 테스트해 한글 인식률이 더 높은 셀바스로 정했습니다.</p>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>한글 인식률이 더 높은 셀바스 엔진 채택으로 음독 평가 신뢰도 확보</li></ul></div>
 </div><ul class="tags" translate="no"><li>Samsung S-Pen SDK</li><li>셀바스 STT</li><li>Java</li></ul></article><article class="csec" id="c2-2"><h3>학습 결과 시각화와 앱 안정성 관리</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>학습 결과를 아이가 한눈에 볼 수 있게 보여줘야
 했고 교육용 태블릿 여러 기종에서 안정적으로 돌아가야 했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>MPAndroidChart 차트와 WebView 기반
 워드클라우드로 학습 결과를 시각화했습니다. Android Profiler로 메모리
 사용을 분석해 최적화하고 태블릿 기종별 호환성을 맞췄으며 Firebase
 Crashlytics, Analytics, IMQA로 모니터링 체계를 갖췄습니다.</p>
-<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>모니터링 체계로 태블릿 기종별 오류를 파악해 앱 안정성 강화</li></ul></div>
-</div><ul class="tags" translate="no"><li>MPAndroidChart</li><li>WebView</li><li>Android Profiler</li><li>Crashlytics</li><li>IMQA</li></ul></article></section><section class="cco" id="co3" aria-labelledby="coh3"><header class="cohd"><span class="when">2020.06 ~ 2020.07</span><h2 id="coh3">메디팔</h2><p class="role">Android 프리랜서</p><p class="svc"><strong>메디팔</strong> — 환자와 간호사를 1:1로 매칭해 건강관리를 제공하는 서비스</p></header><article class="csec" id="c3-1"><h3>WebSocket 기반 실시간 채팅 구현</h3><p class="meta">메디팔 앱<span class="sep"> · </span>2020.06 ~ 2020.07<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>Android 앱을 착수부터 배포까지 혼자
-맡았습니다. 환자와 간호사가 실시간으로 대화하는 채팅이 핵심
-기능이었습니다.</p>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>메모리 최적화와 기종별 호환성 대응으로 여러 교육용 태블릿에서
+안정적으로 동작</li><li>출시 후에도 기종별 오류를 추적해 대응할 수 있는 모니터링 체계 마련</li></ul></div>
+</div><ul class="tags" translate="no"><li>MPAndroidChart</li><li>WebView</li><li>Android Profiler</li><li>Crashlytics</li><li>IMQA</li></ul></article></section><section class="cco" id="co3" aria-labelledby="coh3"><header class="cohd"><span class="when">2020.06 ~ 2020.07</span><h2 id="coh3">메디팔</h2><p class="role">Android 프리랜서</p><p class="svc"><strong>메디팔</strong> — 환자와 간호사를 1:1로 매칭해 건강관리를 제공하는 서비스</p></header><article class="csec" id="c3-1"><h3>WebSocket 기반 실시간 채팅 구현</h3><p class="meta">메디팔 앱<span class="sep"> · </span>2020.06 ~ 2020.07<span class="sep"> · </span>기여도 100%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>환자와 간호사가 실시간으로 대화하는 채팅이
+핵심 기능이었습니다. 채팅으로 이미지를 많이 주고받는 서비스라 이미지
+전송에 드는 서버 비용이 부담이었습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>텍스트와 이미지를 주고받는 채팅방을
-WebSocket으로 직접 구현했습니다. 채팅 이미지는 기기에 캐싱해 대화 기록을
-다시 볼 때 매번 내려받지 않게 했습니다. ExoPlayer 미디어 재생, 채널톡
-상담 연동, FCM 푸시를 함께 구현했습니다.</p>
-<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>이미지 캐싱으로 대화 기록을 다시 볼 때 반복 다운로드 제거</li></ul></div>
+WebSocket으로 직접 구현했습니다. 서버 비용을 줄이려고 채팅 이미지는
+기기에 캐싱해 대화 기록을 다시 볼 때 매번 내려받지 않게 했습니다.
+ExoPlayer 미디어 재생, 채널톡 상담 연동, FCM 푸시를 함께
+구현했습니다.</p>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>채팅 이미지 캐싱으로 서버 비용 절감</li></ul></div>
 </div><ul class="tags" translate="no"><li>WebSocket</li><li>ExoPlayer</li><li>FCM</li><li>Java</li></ul></article></section><section class="cco" id="co4" aria-labelledby="coh4"><header class="cohd"><span class="when">2018.08 ~ 2019.09</span><h2 id="coh4">(주) 씨커스블록체인</h2><p class="role">Android</p><p class="svc"><strong>비트탑</strong> — 암호화폐 거래소 앱</p></header><article class="csec" id="c4-1"><h3>Web3j 기반 이더리움 네트워크 연동</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09<span class="sep"> · </span>기여도 30%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 앱에서 이더리움과 ERC-20 토큰의 잔액과
 거래 내역을 모바일 화면에 보여줘야 했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>Web3j로 이더리움 네트워크와 직접 통신하는
@@ -460,9 +462,7 @@ WebSocket으로 직접 구현했습니다. 채팅 이미지는 기기에 캐싱�
 표시했습니다. 블록체인 통신의 비동기 처리와 에러 처리를 구현했고 실시간
 시세 조회와 거래 기능, Android Keystore 기반 개인키 관리, PIN과 지문
 인증을 맡았습니다.</p>
-<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>Android Keystore와 PIN, 지문 인증으로 지갑 개인키를 기기 안에서
-보호</li><li>블록체인 응답이 느리거나 실패해도 화면이 멈추지 않는 조회 흐름
-마련</li></ul></div>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>Android Keystore로 지갑 개인키를 기기 안에서만 보관해 보안 확보</li><li>비동기 처리와 에러 처리로 블록체인 응답 지연 시 화면 멈춤 방지</li></ul></div>
 </div><ul class="tags" translate="no"><li>Web3j</li><li>Android Keystore</li><li>Java</li></ul></article><article class="csec" id="c4-2"><h3>인증 연동과 품질 관리, 백엔드 REST API 개발</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09<span class="sep"> · </span>기여도 30%</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 가입에는 휴대전화 본인확인과 주소
 입력이 필요했습니다. 백엔드는 블록체인 개발에 집중하고 있어 앱에 필요한
 API를 지원받기 어려웠습니다.</p>
@@ -470,7 +470,7 @@ API를 지원받기 어려웠습니다.</p>
 입력을 연동했습니다. 앱에 필요한 API는 Spring과 JPA 기반 REST API로 직접
 개발했습니다. LeakCanary로 메모리 누수를 점검하고 FCM, Analytics,
 Crashlytics를 도입했습니다.</p>
-<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>본인확인과 주소 입력까지 앱 안에서 끝나는 가입 흐름 완성</li><li>메모리 누수 점검과 크래시 모니터링으로 앱 안정성 관리 체계 마련</li></ul></div>
+<div class="res"><span class="lbl lbl-결과">결과</span><ul><li>본인확인부터 서버 API까지 가입 기능 전 과정 직접 완성</li><li>LeakCanary와 Crashlytics로 메모리 누수와 크래시 관리 체계 마련</li></ul></div>
 </div><ul class="tags" translate="no"><li>Spring</li><li>JPA</li><li>LeakCanary</li><li>FCM</li></ul></article></section><div class="tail" aria-hidden="true"></div>
 <footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-11-20</footer>
 </main>
