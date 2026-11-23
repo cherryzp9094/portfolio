@@ -280,7 +280,7 @@ data-cites="Stable을">@Stable을</span> 붙여 바뀌지 않은 부분은 건�
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>데이터 불일치와 텍스트 VOC 해소</li><li>절전 모드 안내 후 간헐적 로드 실패 VOC 해소</li><li>XML과 SQLite 기반 레거시 위젯 코드 제거</li><li>Crashlytics 기준 운영 기간 위젯 관련 크래시 0건</li><li>LeakCanary를 팀 빌드 옵션으로 정착</li></ul></div>
 <p class="blk"><span class="lbl lbl-회고">회고</span>텍스트 크기 조정은 앱을 한 번 실행해야
 반영됩니다. 위젯 단독으로 갱신할 방법은 찾지 못해 한계로 남았습니다.</p>
-</div><ul class="tags" translate="no"><li>Glance</li><li>WorkManager</li><li>Proto DataStore</li><li>LeakCanary</li></ul></article><article class="csec" id="c1-5"><h3>Keystore 기반 로그인 정보 암호화</h3><p class="meta">데이터 암호화 마이그레이션<span class="sep"> · </span>2025.08</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>로그인 비밀번호가 기기에 평문으로 저장되는
+</div><ul class="tags" translate="no"><li>Glance</li><li>WorkManager</li><li>Proto DataStore</li><li>LeakCanary</li></ul></article><article class="csec" id="c1-5"><h3>Keystore 기반 로그인 정보 암호화</h3><p class="meta">데이터 암호화 마이그레이션<span class="sep"> · </span>2025.08</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>로그인 비밀번호가 기기에 평문으로 저장되는
 문제를 직접 찾았습니다. EncryptedSharedPreferences는 deprecated된
 상태였고 DataStore도 기본 암호화를 제공하지 않아 저장소 자체에 암호화를
 넣어야 했습니다.</p>
@@ -291,7 +291,7 @@ Keystore에서 AES-GCM으로 생성해 앱 밖으로 꺼낼 수 없게 했습니
 저장소로 직접 옮겼고 이미 배포된 앱의 평문 데이터는 앱 시작 시 암호화
 저장소로 옮긴 뒤 삭제했습니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>기기에 평문으로 남던 비밀번호 제거</li><li>기존 사용자는 다시 로그인하지 않고 앱 업데이트만으로 전환</li></ul></div>
-</div><ul class="tags" translate="no"><li>Android Keystore</li><li>AES-GCM</li><li>DataStore</li></ul></article><article class="csec" id="c1-6"><h3>AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</h3><p class="meta">테스트 자동화<span class="sep"> · </span>2026.02 ~ 03</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>매출처럼 자주 수정되는 ViewModel은 회귀
+</div><ul class="tags" translate="no"><li>Android Keystore</li><li>AES-GCM</li><li>DataStore</li></ul></article><article class="csec" id="c1-6"><h3>AI 기반 ViewModel 테스트 자동 생성 파이프라인 설계</h3><p class="meta">테스트 자동화<span class="sep"> · </span>2026.02 ~ 03</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>매출처럼 자주 수정되는 ViewModel은 회귀
 버그가 잦았습니다. Given-When-Then 형식의 단위 테스트 컨벤션과 이를
 따르는 테스트 작성 스킬을 직접 만들어 쓰고 있었지만 커버리지를 20.6%까지
 올린 뒤로는 더 높이지 못했습니다. 필요한 테스트 코드가 AI가 한 번에 다룰
@@ -308,7 +308,7 @@ Keystore에서 AES-GCM으로 생성해 앱 밖으로 꺼낼 수 없게 했습니
 실패한 테스트를 진단해 고치고 다시 검증하는 일을 사람이 다시 요청하지
 않아도 이어 갑니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>3,805줄 매출 ViewModel 커버리지 20.6% → 83%</li><li>커버리지가 낮던 대형 ViewModel의 커버리지 80% 이상 달성</li><li>QA 집계 기준 회귀 버그 티켓 50% 이상 감소</li></ul></div>
-</div><ul class="tags" translate="no"><li>Claude Code</li><li>Ralph Loop</li><li>JUnit5</li><li>Turbine</li><li>MockK</li><li>JaCoCo</li></ul></article><article class="csec" id="c1-7"><h3>상담봇 RAG 설계·검증</h3><p class="meta">상담봇 비용 개선<span class="sep"> · </span>2026.04 ~ 05</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>고객 상담봇은 최상위 모델이 질문마다 지식
+</div><ul class="tags" translate="no"><li>Claude Code</li><li>Ralph Loop</li><li>JUnit5</li><li>Turbine</li><li>MockK</li><li>JaCoCo</li></ul></article><article class="csec" id="c1-7"><h3>상담봇 RAG 설계·검증</h3><p class="meta">상담봇 비용 개선<span class="sep"> · </span>2026.04 ~ 05</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>고객 상담봇은 최상위 모델이 질문마다 지식
 베이스 전체를 훑어 답하는 구조라 상담 대화로 인한 토큰 사용량이
 컸습니다. CX 파트에서도 토큰 부족 문제로 개선을 요청했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>고객에게 바로 답이 나가는 시스템이라 잘못된
@@ -430,7 +430,7 @@ Android 2 · iOS 2 · QA 1 네이티브 팀
 <li><strong>장애 회고</strong> — 장애가 나면 회고를 열어 재발 방지
 항목과 담당을 정함</li>
 </ul>
-</div></section></section><section class="cco" id="co2" aria-labelledby="coh2"><header class="cohd"><span class="when">2020.12 ~ 2021.06</span><h2 id="coh2">(주) 대교</h2><p class="role">Android 프리랜서</p><p class="svc"><strong>대교 써밋 국어</strong> — 초등학생 국어 학습 태블릿 앱 · 필기와 음성이 주 입력 방식</p></header><article class="csec" id="c2-1"><h3>S-Pen 필기 입력과 음성 인식 통합</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>초등학생 국어 학습 앱이라 필기와 음성이 주
+</div></section></section><section class="cco" id="co2" aria-labelledby="coh2"><header class="cohd"><span class="when">2020.12 ~ 2021.06</span><h2 id="coh2">(주) 대교</h2><p class="role">Android 프리랜서</p><p class="svc"><strong>대교 써밋 국어</strong> — 초등학생 국어 학습 태블릿 앱 · 필기와 음성이 주 입력 방식</p></header><article class="csec" id="c2-1"><h3>S-Pen 필기 입력과 음성 인식 통합</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>초등학생 국어 학습 앱이라 필기와 음성이 주
 입력 방식이었습니다. 학습 노트와 문제 풀이에는 필기를 쓰고 소리 내어
 읽기 평가에는 음성 인식이 필요했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>Samsung S-Pen SDK로 학습 노트와 문제 풀이
@@ -438,7 +438,7 @@ Android 2 · iOS 2 · QA 1 네이티브 팀
 평가에는 음성 인식을 통합했고 음성 인식 엔진은 같은 문구로 구글 음성
 인식과 비교 테스트해 한글 인식률이 더 높은 셀바스로 정했습니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>한글 인식률이 더 높은 셀바스 엔진 채택으로 음독 평가 신뢰도 확보</li></ul></div>
-</div><ul class="tags" translate="no"><li>Samsung S-Pen SDK</li><li>셀바스 STT</li><li>Java</li></ul></article><article class="csec" id="c2-2"><h3>학습 결과 시각화와 앱 안정성 관리</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>학습 결과를 아이가 한눈에 볼 수 있게 보여줘야
+</div><ul class="tags" translate="no"><li>Samsung S-Pen SDK</li><li>셀바스 STT</li><li>Java</li></ul></article><article class="csec" id="c2-2"><h3>학습 결과 시각화와 앱 안정성 관리</h3><p class="meta">써밋 국어<span class="sep"> · </span>2020.12 ~ 2021.06</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>학습 결과를 아이가 한눈에 볼 수 있게 보여줘야
 했고 교육용 태블릿 여러 기종에서 안정적으로 돌아가야 했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>MPAndroidChart 차트와 WebView 기반
 워드클라우드로 학습 결과를 시각화했습니다. Android Profiler로 메모리
@@ -446,7 +446,7 @@ Android 2 · iOS 2 · QA 1 네이티브 팀
 Crashlytics, Analytics, IMQA로 모니터링 체계를 갖췄습니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>메모리 최적화와 기종별 호환성 대응으로 여러 교육용 태블릿에서
 안정적으로 동작</li><li>출시 후에도 기종별 오류를 추적해 대응할 수 있는 모니터링 체계 마련</li></ul></div>
-</div><ul class="tags" translate="no"><li>MPAndroidChart</li><li>WebView</li><li>Android Profiler</li><li>Crashlytics</li><li>IMQA</li></ul></article></section><section class="cco" id="co3" aria-labelledby="coh3"><header class="cohd"><span class="when">2020.06 ~ 2020.07</span><h2 id="coh3">메디팔</h2><p class="role">Android 프리랜서</p><p class="svc"><strong>메디팔</strong> — 환자와 간호사를 1:1로 매칭해 건강관리를 제공하는 서비스</p></header><article class="csec" id="c3-1"><h3>WebSocket 기반 실시간 채팅 구현</h3><p class="meta">메디팔 앱<span class="sep"> · </span>2020.06 ~ 2020.07</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>환자와 간호사가 실시간으로 대화하는 채팅이
+</div><ul class="tags" translate="no"><li>MPAndroidChart</li><li>WebView</li><li>Android Profiler</li><li>Crashlytics</li><li>IMQA</li></ul></article></section><section class="cco" id="co3" aria-labelledby="coh3"><header class="cohd"><span class="when">2020.06 ~ 2020.07</span><h2 id="coh3">메디팔</h2><p class="role">Android 프리랜서</p><p class="svc"><strong>메디팔</strong> — 환자와 간호사를 1:1로 매칭해 건강관리를 제공하는 서비스</p></header><article class="csec" id="c3-1"><h3>WebSocket 기반 실시간 채팅 구현</h3><p class="meta">메디팔 앱<span class="sep"> · </span>2020.06 ~ 2020.07</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>환자와 간호사가 실시간으로 대화하는 채팅이
 핵심 기능이었습니다. 채팅으로 이미지를 많이 주고받는 서비스라 이미지
 전송에 드는 서버 비용이 부담이었습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>텍스트와 이미지를 주고받는 채팅방을
@@ -455,7 +455,7 @@ WebSocket으로 직접 구현했습니다. 서버 비용을 줄이려고 채팅 
 ExoPlayer 미디어 재생, 채널톡 상담 연동, FCM 푸시를 함께
 구현했습니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>채팅 이미지 캐싱으로 서버 비용 절감</li></ul></div>
-</div><ul class="tags" translate="no"><li>WebSocket</li><li>ExoPlayer</li><li>FCM</li><li>Java</li></ul></article></section><section class="cco" id="co4" aria-labelledby="coh4"><header class="cohd"><span class="when">2018.08 ~ 2019.09</span><h2 id="coh4">(주) 씨커스블록체인</h2><p class="role">Android</p><p class="svc"><strong>비트탑</strong> — 암호화폐 거래소 앱</p></header><article class="csec" id="c4-1"><h3>Web3j 기반 이더리움 네트워크 연동</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 앱에서 이더리움과 ERC-20 토큰의 잔액과
+</div><ul class="tags" translate="no"><li>WebSocket</li><li>ExoPlayer</li><li>FCM</li><li>Java</li></ul></article></section><section class="cco" id="co4" aria-labelledby="coh4"><header class="cohd"><span class="when">2018.08 ~ 2019.09</span><h2 id="coh4">(주) 씨커스블록체인</h2><p class="role">Android</p><p class="svc"><strong>비트탑</strong> — 암호화폐 거래소 앱</p></header><article class="csec" id="c4-1"><h3>Web3j 기반 이더리움 네트워크 연동</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 앱에서 이더리움과 ERC-20 토큰의 잔액과
 거래 내역을 모바일 화면에 보여줘야 했습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>Web3j로 이더리움 네트워크와 직접 통신하는
 모듈을 개발해 ERC-20 토큰 잔액과 거래 내역을 조회하고 화면에
@@ -463,7 +463,7 @@ ExoPlayer 미디어 재생, 채널톡 상담 연동, FCM 푸시를 함께
 시세 조회와 거래 기능, Android Keystore 기반 개인키 관리, PIN과 지문
 인증을 맡았습니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>Android Keystore로 지갑 개인키를 기기 안에서만 보관해 보안 확보</li><li>비동기 처리와 에러 처리로 블록체인 응답 지연 시 화면 멈춤 방지</li></ul></div>
-</div><ul class="tags" translate="no"><li>Web3j</li><li>Android Keystore</li><li>Java</li></ul></article><article class="csec" id="c4-2"><h3>인증 연동과 품질 관리, 백엔드 REST API 개발</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 가입에는 휴대전화 본인확인과 주소
+</div><ul class="tags" translate="no"><li>Web3j</li><li>Android Keystore</li><li>Java</li></ul></article><article class="csec" id="c4-2"><h3>인증 연동과 품질 관리, 백엔드 REST API 개발</h3><p class="meta">비트탑<span class="sep"> · </span>2018.08 ~ 2019.09</p><p class="team">팀 구성 · Android 1</p><div class="cbody"><p class="blk"><span class="lbl lbl-상황">상황</span>거래소 가입에는 휴대전화 본인확인과 주소
 입력이 필요했습니다. 백엔드는 블록체인 개발에 집중하고 있어 앱에 필요한
 API를 지원받기 어려웠습니다.</p>
 <p class="blk"><span class="lbl lbl-해결">해결</span>WebView로 다날 휴대전화 본인확인과 도로명주소
@@ -472,7 +472,7 @@ API를 지원받기 어려웠습니다.</p>
 Crashlytics를 도입했습니다.</p>
 <div class="res"><span class="lbl lbl-결과">결과</span><ul><li>본인확인부터 서버 API까지 가입 기능 전 과정 직접 완성</li><li>LeakCanary와 Crashlytics로 메모리 누수와 크래시 관리 체계 마련</li></ul></div>
 </div><ul class="tags" translate="no"><li>Spring</li><li>JPA</li><li>LeakCanary</li><li>FCM</li></ul></article></section><div class="tail" aria-hidden="true"></div>
-<footer>© 2026 SeongKwang Lee<span class="sep"> · </span>마지막 갱신 2026-11-23</footer>
+<footer>© 2026 SeongKwang Lee</footer>
 </main>
 <script>(function(){var b=document.querySelector(".bar"),h=document.querySelector("main h1");if(!b||!h)return;var t=0;function u(){t=0;b.classList.toggle("scrolled",h.getBoundingClientRect().bottom<b.offsetHeight)}addEventListener("scroll",function(){if(!t)t=requestAnimationFrame(u)},{passive:true});addEventListener("load",u);u()})();</script>
 <script>(function(){var btn=document.querySelector(".tocbtn"),p=document.getElementById("tocp");
